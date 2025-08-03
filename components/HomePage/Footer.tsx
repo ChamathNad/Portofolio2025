@@ -49,26 +49,26 @@ export default function HomeFooter()
                         alt="Logo"
                         width={300}
                         height={100}
-                        className=" w-[150px] md:w-[200px] h-[100px] duration-500 flex-[2]"
+                        className=" w-[50%] md:w-[200px] h-[100px] duration-500 flex-[2]"
                         onClick={() => {
                             document.body.classList.toggle('dark');
                         }}
                     />
-                    <div className='text-[12px] lg:text-[18px] pt-[1%] flex-[2]'>Blending design, code, and immersive technology to build experiences that connect, From interactive UIs to real-time 3D worlds.</div>
+                    <div className='text-[11px] sm:text-[12px] lg:text-[18px] pt-[1%] flex-[2]'>Blending design, code, and immersive technology to build experiences that connect, From interactive UIs to real-time 3D worlds.</div>
                     <hr className="w-[100%] h-px border-1 border-gray-300 rounded-2xl"/>
-                    <span className='text-[12px] lg:text-[18px] pt-[2%]  pb-[5%] flex flex-row gap-2'>
+                    <span className='text-[8px] md:text-[12px] lg:text-[18px] pt-[2%]  pb-[5%] flex flex-row gap-2'>
                       <span> © 2025 Chamath Nadeeshan |</span>
                       {SocialData.map((exp,index) => (<SocialButton key={index} link={exp.links} logo={exp.Logo} />))}
                     </span>
                 </div>
                 <div className='w-px border-1 rounded-4xl border-gray-500'></div>
-                <div className='flex flex-col flex-[2] md:gap-1'>
-                    <div className='font-bold  flex justify-center p-2 text-Primary-500'>Site map</div>
-                    <div className='p-1 hover:font-bold hover:text-Primary-500 hover:bg-white/10 rounded-3xl flex justify-center cursor-pointer gap-2 group/line' onClick={() => handleClick(1,'/')}> Home  <ArrowUpRightIcon className='hidden group-hover/line:block' weight='bold' size={20} /></div>
-                    <div className='p-1 hover:font-bold hover:text-Primary-500 hover:bg-white/10 rounded-3xl flex justify-center cursor-pointer gap-2 group/line' onClick={() => handleClick(2,'/resume')}>Resume <ArrowUpRightIcon className='hidden group-hover/line:block' weight='bold' size={20} /></div>
-                    <div className='p-1 hover:font-bold hover:text-Primary-500 hover:bg-white/10 rounded-3xl flex justify-center cursor-pointer gap-2 group/line' onClick={() => handleClick(3,'/project')}>Project <ArrowUpRightIcon className='hidden group-hover/line:block' weight='bold' size={20} /></div>
-                    <div className='p-1 hover:font-bold hover:text-Primary-500 hover:bg-white/10 rounded-3xl flex justify-center cursor-pointer gap-2 group/line' onClick={() => handleClick(4,'/about')}>Contact <ArrowUpRightIcon className='hidden group-hover/line:block' weight='bold' size={20} /></div>
-                    <div className='p-1 hover:font-bold hover:text-Primary-500 hover:bg-white/10 rounded-3xl flex justify-center cursor-pointer gap-2 group/line' onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Back to Top <ArrowUpIcon className='hidden group-hover/line:block' weight='bold' size={20} /></div>
+                <div className='flex flex-col flex-[2] md:gap-1 text-[12px] lg:text-[18px] '>
+                    <div className='font-bold  flex justify-center p-[1%] text-Primary-500'>Site map</div>
+                    <div className='p-[3%] hover:font-bold hover:text-Primary-500 hover:bg-white/10 rounded-3xl flex justify-center cursor-pointer gap-2 group/line' onClick={() => handleClick(1,'/')}> Home  <ArrowUpRightIcon className='hidden group-hover/line:block' weight='bold' size={20} /></div>
+                    <div className='p-[2%] hover:font-bold hover:text-Primary-500 hover:bg-white/10 rounded-3xl flex justify-center cursor-pointer gap-2 group/line' onClick={() => handleClick(2,'/resume')}>Resume <ArrowUpRightIcon className='hidden group-hover/line:block' weight='bold' size={20} /></div>
+                    <div className='p-[2%] hover:font-bold hover:text-Primary-500 hover:bg-white/10 rounded-3xl flex justify-center cursor-pointer gap-2 group/line' onClick={() => handleClick(3,'/project')}>Project <ArrowUpRightIcon className='hidden group-hover/line:block' weight='bold' size={20} /></div>
+                    <div className='p-[2%] hover:font-bold hover:text-Primary-500 hover:bg-white/10 rounded-3xl flex justify-center cursor-pointer gap-2 group/line' onClick={() => handleClick(4,'/about')}>Contact <ArrowUpRightIcon className='hidden group-hover/line:block' weight='bold' size={20} /></div>
+                    <div className='p-[2%] hover:font-bold hover:text-Primary-500 hover:bg-white/10 rounded-3xl flex justify-center cursor-pointer gap-2 group/line' onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Back to Top <ArrowUpIcon className='hidden group-hover/line:block' weight='bold' size={20} /></div>
                 </div>
               </div>
                 <hr className='text-white'/>

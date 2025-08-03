@@ -28,12 +28,12 @@ export default function Header(){
 
             {/*MOBILE Bar */}    
             <div className='lg:hidden w-full'>
-                <Container className='flex flex-row justify-between gap-[20px] bg-black dark:bg-gray-200 p-[10px]'> 
-                        <SideMenu className='flex justify-center items-center ml-[3%] rounded-[15px] border-Primary-400 dark:border-black hover:border-1  w-[66px] h-[66px]' OnClick={handleClick} currIndex={activeIndex}/>
+                <Container className='flex flex-row justify-between items-center gap-[20px] bg-black dark:bg-gray-200 py-[2%] px-[5%]'> 
+                        <SideMenu className='flex justify-center items-center ml-[3%] rounded-[15px] border-Primary-400 dark:border-black hover:border-1  w-[10%] h-auto' OnClick={handleClick} currIndex={activeIndex}/>
                         
-                        <Logo attributes='flex max-w-[65%]'/>
+                        <Logo attributes='flex max-w-[30%] md:max-w-[60%]'/>
 
-                        <button className={`font-family-Lufga cursor-pointer w-[66px] h-[66px] text-[40px] max-w-[15%] flex justify-center items-center 
+                        <button className={`font-family-Lufga cursor-pointer w-[10%] h-auto text-[40px] max-w-[15%] flex justify-center items-center 
                                     bg-transparent text-white dark:text-black rounded-[15px] border-Primary-400 dark:border-black hover:border-1  ml-[3%]`}
                                     onClick={() => handleClick(2,'/resume')} >
                                         <ReadCvLogoIcon/>

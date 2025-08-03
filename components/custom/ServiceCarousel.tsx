@@ -78,12 +78,12 @@ export function ServiceCarousel({
                 border-gray-400 border-2 rounded-[20px] text-[60px] text-white bg-gray-800 hover:border-Primary-400 active:bg-Primary-500
                 flex items-center flex-2 justify-center transition duration-100"/>
 
-      <span className="flex justify-center gap-5 mt-2 pt-15">
+      <span className="flex justify-center gap-5 m-[5%] p-[5%]">
         {Array.from({ length: count }).map((_, index) => (
           <span
             key={index}
-            className={`h-7 rounded-full transition-all duration-300 ${
-              current-1 === index ? "w-30 bg-Primary-500" : "w-7 bg-gray-50"
+            className={`h-3 sm:h-4 md:h-7 aspect-square rounded-full transition-all duration-300 ${
+              current-1 === index ? "w-7 sm:w-13 lg:w-20 bg-Primary-500" : "w-3 sm:w-4 lg:w-7 bg-gray-50"
             }`}
           />
         ))}

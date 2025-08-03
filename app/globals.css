@@ -146,40 +146,7 @@
 
 }
 
-/* #region Queries */
 
-@media (max-width: 319px) {
-  /* XS - up to 319px */
-}
-@media (min-width: 360px) {  
-/* Tiny - 360px and above */
-}
-@media (min-width: 575px) {
-  /* SM - 575px and above */
-}
-@media (min-width: 768px) {
-  /* MD - 768px and above */
-}
-@media (min-width: 1024px) {
-   /* LG - 1024px and above */
-  body {
-    display: flex;
-    flex-direction: column; /* 👈 This is the fix */
-    align-items: center;     /* Optional: center the content horizontally */
-  }
-}
-@media (min-width: 1280px) {
-  /* XL - 1280px and above */
-}
-@media (min-width: 1440px) {
-  /* 2XL - 1440px and above */  
-}
-@media (min-width: 1680px) {  
-  
-}
-@media (min-width: 1920px) {
-  
-}
 
 /* #endregion */
 
@@ -367,8 +334,8 @@
      #0000 25%,#000 0);
 }
 .bottom-right {
-    --r: 55px; /* radius */
-    --s: 65px; /* size of the inner curve*/
+    --r: 40px; /* radius */
+    --s: 45px; /* size of the inner curve*/
     
     border-radius: var(--r);    
     --_m:/calc(2*var(--r)) calc(2*var(--r)) radial-gradient(#000 70%,#0000 72%) no-repeat;
@@ -388,9 +355,9 @@
   border-width: 1px;
   border-style: solid;
   border-color: #6b7280; /* Tailwind's gray-500 */
-  border-radius: 10rem;   /* Tailwind's rounded-2xl */
-  margin-top: 2rem;    /* Tailwind's my-10 */
-  margin-bottom: 2rem;
+  border-radius: 10%;   /* Tailwind's rounded-2xl */
+  margin-top: 2%;    /* Tailwind's my-10 */
+  margin-bottom: 2%;
 }
 .custom-hr2 {
   width: 100%;
@@ -398,8 +365,42 @@
   border-width: 1px;
   border-style: solid;
   border-color: #6b7280; /* Tailwind's gray-500 */
-  border-radius: 10rem;   /* Tailwind's rounded-2xl */
-  margin-top: 1rem;    /* Tailwind's my-10 */
-  margin-bottom: 1rem;
+  border-radius: 10%;   /* Tailwind's rounded-2xl */
+  margin-top: 1%;    /* Tailwind's my-10 */
+  margin-bottom: 1%;
 }
 
+/* #region Queries */
+
+@media (max-width: 359px) {
+  /* XS - up to 319px */  
+}
+@media (min-width: 360px) {  
+/* Tiny - 360px and above */  
+}
+@media (min-width: 575px) {
+  /* SM - 575px and above */
+}
+@media (min-width: 768px) {
+  /* MD - 768px and above */
+}
+@media (min-width: 1024px) {
+   /* LG - 1024px and above */
+  body {
+    display: flex;
+    flex-direction: column; /* 👈 This is the fix */
+    align-items: center;     /* Optional: center the content horizontally */
+  }
+}
+@media (min-width: 1280px) {
+  /* XL - 1280px and above */
+}
+@media (min-width: 1440px) {
+  /* 2XL - 1440px and above */  
+}
+@media (min-width: 1680px) {  
+  
+}
+@media (min-width: 1920px) {
+  
+}
