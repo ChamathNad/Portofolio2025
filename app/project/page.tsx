@@ -91,7 +91,6 @@ export default function Home() {
       useEffect(() => {
         ProjectList().then(setProjects);
         EventsList().then(setEvents);
-        console.log(SList);
       }, []);
 
       const filteredData = PList.filter(item => {

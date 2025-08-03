@@ -33,8 +33,8 @@ export default function Home() {
             </div>
             <div  className="flex flex-[3] flex-col gap-[5%] mx-auto justify-center">
               <span className="flex-[1] font-bold text-4xl text-Primary-500">Bio</span>
-              <span className="flex-[10]">I’m a passionate and innovative technologist with a strong foundation in Robotics, IoT, Software Development, and Game Development. With a years of experience in Interactive media and BSc in Physics-ICT from the University of Sri Jayewardenepura, I thrive at the intersection of creativity and engineering.
-                                        <br/><br/>Continuously driven by curiosity, I enjoy exploring new technologies, tools, and frameworks — and I learn quickly in fast-paced environments. I'm detail-oriented, highly organized, and constantly strive to optimize for efficiency and clarity in everything I build.</span>
+              <span className="flex-[10]">I&apos;m a passionate and innovative technologist with a strong foundation in Robotics, IoT, Software Development, and Game Development. With a years of experience in Interactive media and BSc in Physics-ICT from the University of Sri Jayewardenepura, I thrive at the intersection of creativity and engineering.
+                                        <br/><br/>Continuously driven by curiosity, I enjoy exploring new technologies, tools, and frameworks — and I learn quickly in fast-paced environments. I&apos;m detail-oriented, highly organized, and constantly strive to optimize for efficiency and clarity in everything I build.</span>
             </div>
           </div>
 

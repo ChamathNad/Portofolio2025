@@ -36,7 +36,7 @@ export default function HomePage()
               />
               <div className="text-center text-[90px] relative translate-y-[100px] translate-x-[0px] font-family-Lufga              
                   group-hover:translate-y-160 transition-transform duration-500" >
-                I'm 
+                I&apos;m 
                 <span className="text-Primary-500"> Chamath</span>,
               </div>
               <Image 
@@ -125,7 +125,7 @@ export default function HomePage()
                 <StarIcon size={30} className="text-Primary-500 fill-Primary-500"/>
                 <StarIcon size={30} className="text-Primary-500 fill-Primary-500"/>
                 <StarIcon size={30} className="text-Primary-500 fill-Primary-500"/></span>
-                <span className="text-[25px] font-family-Lufga">Game dev. Web dev. Whatever needs <br/>  — I'll make it happen.</span>
+                <span className="text-[25px] font-family-Lufga">Game dev. Web dev. Whatever needs <br/>  — I&apos;ll make it happen.</span>
               </div>
 
               <ToggleButtons 
@@ -266,7 +266,7 @@ export default function HomePage()
                 />
                 <div className={`text-center text-[35px] relative translate-x-[0px] font-family-Lufga transition-transform duration-500
                                 ${openBox ? 'translate-y-160':'translate-y-[50px]'}`} >
-                    I'm <span className="text-Primary-500"> Chamath</span>,
+                    I&apos;m <span className="text-Primary-500"> Chamath</span>,
                 </div>
                 <Image 
                     src="/Images/commas.svg"
@@ -294,7 +294,7 @@ export default function HomePage()
                     <StarIcon size={18} className="text-Primary-500 fill-Primary-500"/>
                     <StarIcon size={18} className="text-Primary-500 fill-Primary-500"/>
                     <StarIcon size={18} className="text-Primary-500 fill-Primary-500"/></span>
-                    <span className="text-[16px] font-family-Lufga">Game dev. Web dev. Whatever needs <br/>  — I'll make it happen.</span>
+                    <span className="text-[16px] font-family-Lufga">Game dev. Web dev. Whatever needs <br/>  — I&apos;ll make it happen.</span>
                 </div>
 
                 <div className="relative cursor-pointer" onClick={() => setopenBox(!openBox)}>

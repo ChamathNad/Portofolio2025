@@ -57,10 +57,10 @@ export default function Home() {
           <Container className="flex flex-col justify-center bg-background w-full min-h-[80vh]">            
           <hr className="custom-hr"/>
             <div className="max-w-2xl mx-auto px-4 py-12 font-family-Lufga text-[15px] md:text-[20px] ">
-              <h1 className="text-4xl font-bold mb-6 text-Primary-500">Let's Connect</h1>
+              <h1 className="text-4xl font-bold mb-6 text-Primary-500">Let&apos;s Connect</h1>
 
               <p className="mb-6 dark:text-gray-200 text-gray-700">
-                I'm always open to collaboration, freelance opportunities, or just a good conversation about design, development, or game ideas. Feel free to reach out!
+                I&apos;m always open to collaboration, freelance opportunities, or just a good conversation about design, development, or game ideas. Feel free to reach out!
               </p>
 
               <div className="flex flex-col justify-between gap-4">
