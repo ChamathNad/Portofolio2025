@@ -34,7 +34,7 @@ export default function HomeFooter()
           <div className={"w-full h-[25vh] flex flex-col justify-center group bg-gray-900 rounded-t-[25px]"}>
   
             <div className='w-full h-full flex overflow-clip'>
-              <div className="absolute w-full h-[25vh] overflow-hidden rounded-fade">
+              <div className="absolute w-[99%] h-[25vh] overflow-hidden rounded-fade">
                 <div className="w-full h-full translate-y-[15%] mix-blend-lighten opacity-10">
                   <div className="absolute inset-0 z-0 bg-[url('/Images/BG_Circut.jpg')] bg-center bg-repeat bg-[length:1500px] blur-50"/>
                   <div className="absolute inset-0 z-1 bg-[url('/Images/BG_Circut.jpg')] bg-center bg-repeat bg-[length:1500px] mix-blend-multiply animate-scroll-circuit blur-50"/>

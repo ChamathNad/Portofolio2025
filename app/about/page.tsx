@@ -53,10 +53,10 @@ export default function Home() {
         }, 
       ];
   return (
-        <div className="w-full p-1">
-          <Container className="flex flex-col justify-center bg-background w-full min-h-[80vh]">            
+        <div className="w-full p-[1%]">
+          <Container className="flex flex-col justify-center bg-background w-full min-h-[80vh] ">            
           <hr className="custom-hr"/>
-            <div className="max-w-2xl mx-auto px-4 py-12 font-family-Lufga text-[15px] md:text-[20px] ">
+            <div className="max-w-2xl px-[4%] py-12 font-family-Lufga text-[15px] md:text-[20px] ">
               <h1 className="text-4xl font-bold mb-6 text-Primary-500">Let&apos;s Connect</h1>
 
               <p className="mb-6 dark:text-gray-200 text-gray-700">
@@ -67,7 +67,7 @@ export default function Home() {
                 {SocialData.map((exp,index) => (                    
                   <div key={index}>
                     <a className="flex flex-row items-center gap-2 group hover:font-bold" href={exp.links}>
-                      <span className="text-5xl border-2 p-1 border-black/30 dark:border-white/30 group-hover:border-Primary-500">
+                      <span className="text-[200%] border-2 p-[1%] border-black/30 dark:border-white/30 group-hover:border-Primary-500">
                         {exp.Logo}
                       </span>
                       <strong className="group-hover:text-Primary-500 min-w-[15%]">{exp.Id} :</strong> {exp.rawlinks}

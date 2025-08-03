@@ -28,7 +28,7 @@ export default function Header(){
 
             {/*MOBILE Bar */}    
             <div className='lg:hidden w-full'>
-                <Container className='flex flex-row justify-between items-center gap-[20px] bg-black dark:bg-gray-200 py-[2%] px-[5%]'> 
+                <Container className='flex flex-row justify-between items-center gap-[20px] bg-black dark:bg-gray-200 p-[2%] px-[5%]'> 
                         <SideMenu className='flex justify-center items-center ml-[3%] rounded-[15px] border-Primary-400 dark:border-black hover:border-1  w-[10%] h-auto' OnClick={handleClick} currIndex={activeIndex}/>
                         
                         <Logo attributes='flex max-w-[30%] md:max-w-[60%]'/>

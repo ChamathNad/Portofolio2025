@@ -16,7 +16,7 @@ export default function SideButton({
             className={`
                 font-family-Lufga
                 cursor-pointer 
-                h-[40px] rounded-[40px] text-[20px] w-full
+                h-[15%] rounded-[40px] w-full
                 ml-[10%] mr-[10%] m-[5px]
                 border-Primary-400 dark:border-gray-400
                 flex items-center justify-center transition duration-200

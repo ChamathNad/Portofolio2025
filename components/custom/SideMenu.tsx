@@ -1,9 +1,8 @@
 'use client';
 import React, { useState } from 'react';
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '../ui/sheet';
-import {  GlobeIcon, ListIcon, PackageIcon, ReadCvLogoIcon } from '@phosphor-icons/react';
+import {  GlobeIcon, HouseIcon, ListIcon, PackageIcon, ReadCvLogoIcon } from '@phosphor-icons/react';
 import { Separator } from '../ui/separator';
-import { HomeIcon } from 'lucide-react';
 import SideButton from './SideButton';
 import Image from 'next/image';
 
@@ -24,23 +23,23 @@ export default function SideMenu({ className, currIndex, OnClick }: { className?
                     <SheetDescription></SheetDescription>
                     
                     </SheetHeader>
-                    <div className='flex justify-center flex-wrap'>
+                    <div className='flex justify-center flex-wrap text-[110%]'>
                         
                          <Image src="/Images/Base-White-H.svg"
                             alt="Logo"
                             width={300}
                             height={100}
-                            className="not-dark:hidden w-[170px] h-[100px] justify-center transition-transform duration-500" />
+                            className="not-dark:hidden w-[50%] h-auto justify-center transition-transform duration-500" />
                           
                          <Image src="/Images/Base-Black-H.svg"
                             alt="Logo"
                             width={300}
                             height={100}
-                            className="dark:hidden w-[170px] h-[100px] justify-center transition-transform duration-500" />
+                            className="dark:hidden w-[50%] h-auto justify-center transition-transform duration-500" />
                           
                           <Separator className="m-6 max-w-[80%] bg-Primary-500" />
                         
-                        <SideButton onClick={() => {OnClick(1,'/'); setShow(!show)}} isActive={currIndex === 1}><HomeIcon className='mr-[10px]'/> Home</SideButton>
+                        <SideButton onClick={() => {OnClick(1,'/'); setShow(!show)}} isActive={currIndex === 1}><HouseIcon className='mr-[10px]'/> Home</SideButton>
                         <SideButton onClick={() => {OnClick(2,'/resume'); setShow(!show)}} isActive={currIndex === 2}><ReadCvLogoIcon className='mr-[10px]'/>Resume</SideButton>
                         <SideButton onClick={() => {OnClick(3,'/project'); setShow(!show)}} isActive={currIndex === 3}><PackageIcon className='mr-[10px]'/>Project</SideButton>
                         <SideButton onClick={() => {OnClick(4,'/about'); setShow(!show)}} isActive={currIndex === 4}><GlobeIcon className='mr-[10px]'/>Contact</SideButton>

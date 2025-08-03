@@ -19,7 +19,7 @@ export default function WorkPage()
             <div className='w-full flex flex-col '>
               {experienceData.map((exp, index) => (
                 <WorkXPRow key={index} place={exp.place} position={exp.title} date={exp.time} desc={exp.description} 
-                            odd={index % 2 == 0} classdataBase='text-[12px] sm:text-[15px] lg:text-[30px]' classdataDesc='text-[12px] lg:text-[20px]' nodeSize=' w-[36px] h-[36px] md:w-[66px] md:h-[66px]'/>
+                            odd={index % 2 == 0} classdataBase='text-[12px] sm:text-[15px] lg:text-[28px]' classdataDesc='text-[12px] lg:text-[20px]'nodeSize=' w-[80%] max-w-[46px]'/>
               ))}
 
               
