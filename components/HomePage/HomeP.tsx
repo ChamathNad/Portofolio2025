@@ -246,13 +246,13 @@ export default function HomePage()
           
         {/*MOBILE VERSION*/}
         <div className={"w-[100%] flex justify-center group lg:hidden overflow-x-clip"}>
-          <div className="absolute translate-y-[500px] translate-x-[0px] w-full h-[300px] bg-gray-300 rounded-t-full z-5 " />            
+          <div className="absolute translate-y-[500px] translate-x-[0px] w-full h-[12%] bg-gray-300 rounded-t-full z-5 " />            
           
           <div className="relative flex justify-center">
             <div className=" h-[266px] ">
                 <div className={`mx-auto 
-                                w-[150px] h-[40px] border border-black dark:border-white rounded-[50px]
-                                flex items-center justify-center text-[25px] font-family-Lufga transition-transform duration-600
+                                w-[120px] h-[30px] border border-black dark:border-white rounded-[50px]
+                                flex items-center justify-center text-[18px] font-family-Lufga transition-transform duration-600
                                 ${openBox ? 'translate-y-[560px]' : 'translate-y-[50px]'}`} >  
                     Hello!
                 </div>
@@ -261,10 +261,10 @@ export default function HomePage()
                     alt="commas"
                     width={300}
                     height={100}
-                    className={`w-[30px] h-[30px] relative translate-x-[160px] rotate-160 transition-transform duration-600
-                                ${openBox ? 'translate-y-150': 'translate-y-[-20px]'}`}
+                    className={`w-[30px] h-[30px] relative translate-x-[130px] rotate-160 transition-transform duration-600
+                                ${openBox ? 'translate-y-150': 'translate-y-[-10px]'}`}
                 />
-                <div className={`text-center text-[35px] relative translate-x-[0px] font-family-Lufga transition-transform duration-500
+                <div className={`text-center text-[30px] relative translate-x-[0px] font-family-Lufga transition-transform duration-500
                                 ${openBox ? 'translate-y-160':'translate-y-[50px]'}`} >
                     I&apos;m <span className="text-Primary-500"> Chamath</span>,
                 </div>
@@ -273,7 +273,7 @@ export default function HomePage()
                     alt="commas"
                     width={300}
                     height={100}
-                    className={`w-[50px] h-[50px] relative translate-x-[-50px] transition-transform duration-600
+                    className={`w-[40px] h-[40px] relative translate-x-[-40px] transition-transform duration-600
                     ${openBox ? 'translate-y-120': 'translate-y-[30px]'}`}
                 />
                 <div className={`absolute w-[160px] translate-x-[-80px] transition-transform duration-500
@@ -283,9 +283,9 @@ export default function HomePage()
                     alt="Quote"   width={300} height={100}
                     className="w-[30px] h-[30px]"
                     />
-                    <span className="text-[16px] font-family-Lufga">Building games since I first touched a keyboard,</span>
+                    <span className="text-[15px] font-family-Lufga">Building games since I first touched a keyboard,</span>
                 </div>                  
-                <div className={`absolute w-[160px] translate-x-[130px]  transition-transform duration-600           
+                <div className={`absolute w-[160px] translate-x-[110px]  transition-transform duration-600           
                     ${openBox ? 'translate-y-[-70px]': 'translate-y-[70px]'}`} >
                     
                     <span className="flex flex-wrap gap-1 pb-2">
@@ -294,7 +294,7 @@ export default function HomePage()
                     <StarIcon size={18} className="text-Primary-500 fill-Primary-500"/>
                     <StarIcon size={18} className="text-Primary-500 fill-Primary-500"/>
                     <StarIcon size={18} className="text-Primary-500 fill-Primary-500"/></span>
-                    <span className="text-[16px] font-family-Lufga">Game dev. Web dev. Whatever needs <br/>  — I&apos;ll make it happen.</span>
+                    <span className="text-[15px] font-family-Lufga">Game dev. Web dev. Whatever needs <br/>  — I&apos;ll make it happen.</span>
                 </div>
 
                 <div className="relative cursor-pointer" onClick={() => setopenBox(!openBox)}>
@@ -363,11 +363,11 @@ export default function HomePage()
               />
               <Image src="/Images/Splash/Group 4.svg" alt="commas"  width={300} height={100}
                 className={`w-[150px] h-[100px] absolute transition-transform duration-600 z-8     
-                  ${openBox? 'translate-y-[300px] translate-x-[170px]':'translate-x-[75px] translate-y-[250px] ' } `}
+                  ${openBox? 'translate-y-[300px] translate-x-[170px]':'translate-x-[15px] translate-y-[250px] ' } `}
               />
               <Image src="/Images/Splash/Group 5.svg" alt="commas"  width={300} height={100}
                 className={`w-[150px] h-[100px] absolute transition-transform duration-600 z-8  
-                  ${openBox? 'translate-y-[280px] translate-x-[-120px]':'translate-x-[75px] translate-y-[250px] ' } `}
+                  ${openBox? 'translate-y-[280px] translate-x-[-120px]':'translate-x-[15px] translate-y-[250px] ' } `}
               />
               <Image src="/Images/Splash/Group 6.svg" alt="commas"  width={300} height={100}
                 className={`w-[120px] h-[75px] absolute transition-transform duration-600 z-8 

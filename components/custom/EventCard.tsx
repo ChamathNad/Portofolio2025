@@ -58,6 +58,7 @@ export default function EventCard({
                             alt=""
                             width={500}
                             height={500}
+                            priority
                             className="max-h-full max-w-full object-cover mx-auto aspect-auto  rounded-[8px]"
                         />
                     </div>

@@ -96,6 +96,7 @@ export default function ProjectCard({
                         hover:scale-[110%] duration-500 shadow-lg`}
                         onMouseEnter={() => { if (autoplay?.current && images.length > 0) { autoplay.current.play(); }}}
                         onMouseLeave={() => {autoplay.current?.stop(); autoplay.current?.reset();}}
+                        onClick={() => {autoplay.current?.stop(); autoplay.current?.reset();}}
                     >
                     
                     <div className={`relative w-full h-[70%] flex items-center duration-500 border-b-3 border-Primary-500/50  overflow-clip`} >           
@@ -107,6 +108,7 @@ export default function ProjectCard({
                                         alt=""
                                         width={500}
                                         height={500}
+                                        priority
                                         className="max-h-full max-w-full object-cover mx-auto aspect-auto  rounded-[8px]"
                                     />
                                 </CarouselItem>
@@ -117,6 +119,7 @@ export default function ProjectCard({
                                         alt=""
                                         width={500}
                                         height={500}
+                                        priority
                                         className="max-h-full max-w-full object-cover aspect-auto mx-auto rounded-[8px]"
                                         />
                                     </CarouselItem>
