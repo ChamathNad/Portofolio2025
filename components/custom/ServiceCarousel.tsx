@@ -43,25 +43,25 @@ export function ServiceCarousel({
     <Carousel setApi={setApi} className={className} >
       <CarouselContent >
         <CarouselItem className="flex justify-center md:basis-1/2 lg:basis-1/3">
-          <CarouselButton imageUrl="/Images/Services/ServiceTemplate.png" onClick={() => handleClick(3,'/project')} >  Game Dev: Unity </CarouselButton>
+          <CarouselButton imageUrl="/Images/Services/ST1.png" onClick={() => handleClick(3,'/project')} >  Game Dev: Unity </CarouselButton>
         </CarouselItem>
         <CarouselItem className="flex justify-center md:basis-1/2 lg:basis-1/3">
-          <CarouselButton imageUrl="/Images/Services/ServiceTemplate.png"  onClick={() => handleClick(3,'/project')}> Game Dev: Unreal </CarouselButton>
+          <CarouselButton imageUrl="/Images/Services/ST2.png"  onClick={() => handleClick(3,'/project')}> Game Dev: Unreal </CarouselButton>
         </CarouselItem>
         <CarouselItem className="flex justify-center md:basis-1/2 lg:basis-1/3">
-          <CarouselButton imageUrl="/Images/Services/ServiceTemplate.png" onClick={() => handleClick(3,'/project')} > Web Development </CarouselButton>
+          <CarouselButton imageUrl="/Images/Services/ST3.png" onClick={() => handleClick(3,'/project')} > Css/Web </CarouselButton>
         </CarouselItem>     
         <CarouselItem className="flex justify-center md:basis-1/2 lg:basis-1/3">
-          <CarouselButton imageUrl="/Images/Services/ServiceTemplate.png" onClick={() => handleClick(3,'/project')} > Game Design </CarouselButton>
+          <CarouselButton imageUrl="/Images/Services/ST4.png" onClick={() => handleClick(3,'/project')} > Game Design </CarouselButton>
         </CarouselItem>
         <CarouselItem className="flex justify-center md:basis-1/2 lg:basis-1/3">
-          <CarouselButton imageUrl="/Images/Services/ServiceTemplate.png" onClick={() => handleClick(3,'/project')} > Lectures: Game Dev </CarouselButton>
+          <CarouselButton imageUrl="/Images/Services/ST5.png" onClick={() => handleClick(3,'/project')} > Lectures: Game Dev </CarouselButton>
         </CarouselItem>    
         <CarouselItem className="flex justify-center md:basis-1/2 lg:basis-1/3">
-          <CarouselButton imageUrl="/Images/Services/ServiceTemplate.png" onClick={() => handleClick(3,'/project')} > Robotics </CarouselButton>
+          <CarouselButton imageUrl="/Images/Services/ST6.png" onClick={() => handleClick(3,'/project')} > Robotics </CarouselButton>
         </CarouselItem>
         <CarouselItem className="flex justify-center md:basis-1/2 lg:basis-1/3">
-          <CarouselButton imageUrl="/Images/Services/ServiceTemplate.png" onClick={() => handleClick(3,'/project')} > VR/AR Projects </CarouselButton>
+          <CarouselButton imageUrl="/Images/Services/ST7.png" onClick={() => handleClick(3,'/project')} > VR/AR Projects </CarouselButton>
         </CarouselItem>
 
       </CarouselContent>

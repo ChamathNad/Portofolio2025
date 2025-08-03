@@ -32,7 +32,7 @@ export default function CarouselButton({
                   alt="UI Design"
                   width={1200}  // estimate; adjust to match your layout
                   height={800}  // estimate; adjust to match your layout
-                  className="relative z-10 min-w-[115%] h-auto object-cover duration-500 group-hover/card:min-w-[125%]"
+                  className="relative z-10 min-w-[115%] h-auto object-cover duration-500 group-hover/card:min-w-[135%] group-hover/card:-translate-y-5"
                   unoptimized   // only if imageUrl is an external path (e.g., from a CMS or CDN)
                 />
               </div>              
