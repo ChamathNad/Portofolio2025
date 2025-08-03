@@ -4,7 +4,7 @@ import EventCard from "@/components/custom/EventCard";
 import FilterButton from "@/components/custom/FilterButton";
 import ProjectCard from "@/components/custom/ProjectCard";
 import HomeFooter from "@/components/HomePage/Footer";
-import { ProjectList, EventsList, Project } from "@/lib/localData";
+import { ProjectList, EventsList, Project, Event } from "@/lib/localData";
 import { GameControllerIcon, MagicWandIcon, MagnifyingGlassIcon } from "@phosphor-icons/react";
 import { useEffect, useState } from "react";
 import { BiLogoUnity } from "react-icons/bi";
@@ -76,7 +76,7 @@ export default function Home() {
       const HideUnreleased = false;
 
       const [PList, setProjects] = useState<Project[]>([]);
-      const SList = EventsList();
+      const [SList, setEvents] = useState<Event[]>([]);
       const [activeTags, setActiveTags] = useState<string[]>([]);
       const [searchTerm, setSearchTerm] = useState('');
 
@@ -90,6 +90,8 @@ export default function Home() {
 
       useEffect(() => {
         ProjectList().then(setProjects);
+        EventsList().then(setEvents);
+        console.log(SList);
       }, []);
 
       const filteredData = PList.filter(item => {
@@ -109,9 +111,17 @@ export default function Home() {
       });
 
       const filteredEvents = SList.filter(item => {
-        const tagMatch = activeTags.length === 0 || item.tags.some(tag => activeTags.includes(tag));
-        const searchMatch = item.title.toLowerCase().includes(searchTerm.toLowerCase());
+        const tagMatch = activeTags.length === 0 || item.tags.some(tag => activeTags.includes(tag));   
+        const searchMatch = JSON.stringify(item).toLowerCase().includes(searchTerm.toLowerCase());
         return tagMatch && searchMatch;
+      }).map(item => {
+        if (HideUnreleased && item.enable === false) {
+          return {
+            ...item,
+            cover: "Image_not_available_qmqzal",
+          };
+        }
+        return item;
       });
 
       const isActive = (tag:string) => activeTags.includes(tag);
@@ -195,15 +205,7 @@ export default function Home() {
             <div className='w-full mx-auto h-auto justify-center flex min-h-[20vh]'>
               <div className="flex flex-wrap gap-5 justify-between py-[2%] font-family-Lufga dark:text-white duration-200">
                 {filteredEvents.map((exp, index) => (
-                  <EventCard key={index} 
-                  logoName={exp.title} 
-                  imageLink={exp.cover} 
-                  date={exp.data} 
-                  tags={exp.tags} 
-                  images={exp.images} 
-                  description={exp.description}
-                  contributiondesc={exp.cdescription}
-                  linkList ={exp.linkList}
+                  <EventCard key={index}  data={exp}
                   />
                 ))}            
               </div>            

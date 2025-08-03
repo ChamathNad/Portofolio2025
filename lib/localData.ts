@@ -267,48 +267,57 @@ export async function ProjectList(): Promise<Project[]> {
 }
 
 
+//EVENT FILES
+export type Event = {
+  title: string;
+  role: string;
+  tags: string[];
+  data: string;
+  cover: string;
+  org: string;
+  location: string;
+  description: string;
+  cdescription: string[];
+  linkList: { name: string; type: string; link: string }[];
+  enable: boolean;
+};
+export async function EventsList(): Promise<Event[]>  {
+  const spreadsheetId = "1Irw9K6EsWuJE5NC81GfPJPBzI6NI98K91YoZ2KwN1qc";
+  const apiKey = process.env.NEXT_PUBLIC_CLOUDINARY_GOOGLE_API;
+  const sheetName = "Events";
 
-export function EventsList() {
-  return [     
-    {
-      title: "Dasasura: The legacy of Ravana",
-      tags:["Unity","Solo","Games"],
-      data: "Jan 2021 - Aug 2021",
-      cover:"cld-sample-5",
-      images:["cld-sample-5","cld-sample-5","cld-sample-5","cld-sample-5","cld-sample-5"],
-      description: "3D RPG game sets in a near-futuristic sci-fi world, a story about an adventurer who helps rebel against a leader who tries to take over the Ancient Powers sealed within the values of Ravana. Ability to use various different weapons and gadgets. Explore the Nice looking sceneries and Environments. Fight real and Unreal creatures with special abilities, also face the forces of the Ravana.",
-      cdescription:[
-        "Backend Programming - Unity C#",
-        "Frontend Development - Unity Engine",
-        "3d Modeling - Blender, ZBrush, RealIllusion CC3",
-        "Animation - Unity Animators, Mixamo",
-        "Shaders, Texturing -  Unity ShaderGraphs, Substance Painter",
-        "VFX, Cinematics - Unity ParticleSystem, Unity Timeline.",
-        "Sound Editing - Audacity.",
-        "UI design and Development"],
-      linkList:[ ],
-    }, 
-    {
-      title: "Dasasura: The legacy of Ravana",
-      tags:["Unity","Solo","Games"],
-      data: "Jan 2021 - Aug 2021",
-      cover:"cld-sample-5",
-      images:["cld-sample-5","cld-sample-5","cld-sample-5","cld-sample-5","cld-sample-5"],
-      description: "3D RGB game sets in a near-futuristic sci-fi world, a story about an adventurer who helps rebel against a leader who tries to take over the Ancient Powers sealed within the values of Ravana. Ability to use various different weapons and gadgets. Explore the Nice looking sceneries and Environments. Fight real and Unreal creatures with special abilities, also face the forces of the Ravana.",
-      cdescription:[
-        "Backend Programming - Unity C#",
-        "Frontend Development - Unity Engine",
-        "3d Modeling - Blender, ZBrush, RealIllusion CC3",
-        "Animation - Unity Animators, Mixamo",
-        "Shaders, Texturing -  Unity ShaderGraphs, Substance Painter",
-        "VFX, Cinematics - Unity ParticleSystem, Unity Timeline.",
-        "Sound Editing - Audacity.",
-        "UI design and Development"],
-      linkList:[
-        {name : "AS", link: "" },
-        {name : "DAA", link: "" },
-      ],
+  const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${sheetName}?key=${apiKey}`;
+  const res = await fetch(url);
+  const data: { values?: string[][] } = await res.json();
 
-    }, 
-  ];
+  const values = data.values || [];
+  const [header, ...rows] = values;
+
+  const events: Event[] = rows.map((row: string[]) => {
+    const obj: Record<string, string> = {};
+    header.forEach((key, i) => {
+      obj[key] = row[i] || "";
+    });
+
+    return {
+      title: obj.title,
+      role: obj.size,
+      tags: obj.tags ? obj.tags.split(",").map((t) => t.trim()) : [],
+      data: obj.data,
+      cover: obj.cover,
+      org: obj.org,
+      location: obj.cover,
+      description: obj.description,
+      cdescription: obj.cdescription ? obj.cdescription.split("|").map((d) => d.trim()) : [],
+      linkList: obj.linkList
+        ? obj.linkList.split("|").map((linkStr) => {
+            const [name = "", type = "", link = ""] = linkStr.split(",");
+            return { name: name.trim(), type: type.trim(), link: link.trim() };
+          })
+        : [],
+      enable: obj.enable?.toLowerCase() === "true",
+    };
+  });
+
+  return events;
 }
