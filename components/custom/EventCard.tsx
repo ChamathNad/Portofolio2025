@@ -45,9 +45,12 @@ export default function EventCard({
     return (       
 
         <Sheet open={show} onOpenChange={setShow}>
-                <SheetTrigger className='flex mx-auto '>
+                <SheetTrigger className='flex mx-auto  not-md:w-full '>
                     {/* Card */}
-                    <div className={`${className} relative flex flex-col mx-auto bg-foreground/80 text-white dark:bg-white/20 gap-1 m-1 border-2 rounded-3xl h-[25vh] w-[25vh] overflow-clip border-Primary-500/50 hover:scale-[110%] duration-500`}>
+                    <div className={`${className}  shadow-gray-600 bg-foreground/80 text-white dark:bg-white/20 border-Primary-500/50 
+                        relative flex flex-col mx-auto gap-1 m-1 border-2 rounded-3xl justify-between
+                        h-auto w-[80%] sm:max-w-[30vh] aspect-[5/4] overflow-clip
+                        hover:scale-[110%] duration-500 shadow-lg`}>
                     
                     <div className={`relative w-full h-[70%] flex items-center duration-500 border-b-3 border-Primary-500/50  overflow-clip`} >           
                         <Image
@@ -60,10 +63,10 @@ export default function EventCard({
                     </div>
 
                     <span className='flex text-center text-[15px] lg:text-[20px] items-center justify-center'> {data.title} </span>
-                    <span className='flex text-center text-[11px] lg:text-[12px] items-center justify-center px-5'>
+                    <span className='flex text-center text-[11px] lg:text-[12px] items-center justify-center mx-auto'>
                         {data.data} 
                     </span>
-                    <span className='flex text-center text-[11px] lg:text-[12px] items-center justify-center px-5'>
+                    <span className='flex text-center text-[11px] lg:text-[12px] items-center justify-center mb-[5%]'>
                         {data.tags.map((exp, index) => (
                         <span className='border-1 px-2 mx-1 rounded-[10px] bg-Primary-500/10 border-Primary-400/50' key={index}> {exp} </span>
                         ))}  
@@ -71,15 +74,19 @@ export default function EventCard({
                     </div>
                 </SheetTrigger>
                 
-                <SheetContent side='bottom' className='md:text-[16px] justify-center-safe bg-foreground dark:bg-background text-white rounded-2xl font-family-Lufga fixed left-1/2 -translate-x-1/2 bottom-1/2 translate-y-1/2 max-h-screen w-[90%] h-[75%] max-w-[1250px]'>
+                <SheetContent side='bottom'    
+                    className='text-[12px] sm:text-[14px] lg:text-[15px]  overflow-y-auto max-h-screen
+                            justify-center-safe bg-foreground dark:bg-background text-white rounded-2xl font-family-Lufga 
+                            fixed left-1/2 -translate-x-1/2 bottom-1/2 translate-y-1/2 w-[90%] max-w-[1250px]'>
+                    
                     <SheetHeader>
                     <SheetTitle></SheetTitle>
                     <SheetDescription></SheetDescription>                    
                     </SheetHeader>
 
                     {/* Card Open*/}
-                    <div className="flex w-full mx-auto justify-center items-center text-center flex-col gap-4">
-                    <span className="text-4xl px-[15%]">{data.title}</span>
+                    <div className="flex w-full mx-auto justify-center items-center text-center flex-col gap-3 mb-10">
+                    <span className="text-[200%] px-[15%]">{data.title}</span>
                     <span className="text-gray-400 px-[15%]">{data.data}</span>
                     <hr className="w-[80%] bg-Primary-500/50 border-Primary-500/50"/>
 
@@ -111,9 +118,9 @@ export default function EventCard({
                                 className={`
                                     font-family-Lufga mx-auto 
                                     border-gray-200 border-2
-                                    w-[50%] h-[50px] rounded-[10px] text-[20px] 
+                                    w-[70%] lg:max-w-[50%] h-[50px] rounded-[10px] 
                                     flex items-center justify-center 
-                                    font-normal  text-gray-200 ho
+                                    font-normal  text-gray-200
                                 `}
                             >No Links Found</button>
                             :data.linkList.map((exp,index) => 

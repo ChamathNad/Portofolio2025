@@ -17,7 +17,7 @@ export default function FilterButton({
     <button
       onClick={onClick}
       className={`
-        flex justify-center items-center w-auto border-2 rounded-2xl px-[3%] max-h-8 m-1
+        flex justify-center items-center w-auto border-1 rounded-2xl px-[3%] max-h-8 m-1
         active:font-bold active:text-white
         hover:scale-[110%]
         transition-all duration-150

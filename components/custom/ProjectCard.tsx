@@ -88,16 +88,19 @@ export default function ProjectCard({
     return (       
 
         <Sheet open={show} onOpenChange={setShow}>
-                <SheetTrigger className='flex mx-auto'>
+                <SheetTrigger className='flex mx-auto not-md:w-full '>
                     {/* Card */}
-                    <div className={`${className} shadow-lg shadow-gray-600 relative flex flex-col mx-auto bg-foreground/80 text-white dark:bg-white/20 gap-1 m-1 border-2 rounded-3xl h-[25vh] w-[28vh] overflow-clip border-Primary-500/50 hover:scale-[110%] duration-500`}
+                    <div className={`${className}  shadow-gray-600 bg-foreground/80 text-white dark:bg-white/20 border-Primary-500/50 
+                        relative flex flex-col mx-auto gap-1 m-1 border-2 rounded-3xl justify-between
+                        h-auto w-[80%] sm:max-w-[30vh] aspect-[5/4] overflow-clip
+                        hover:scale-[110%] duration-500 shadow-lg`}
                         onMouseEnter={() => { if (autoplay?.current && images.length > 0) { autoplay.current.play(); }}}
                         onMouseLeave={() => {autoplay.current?.stop(); autoplay.current?.reset();}}
                     >
                     
                     <div className={`relative w-full h-[70%] flex items-center duration-500 border-b-3 border-Primary-500/50  overflow-clip`} >           
                         <Carousel plugins={[autoplay.current]} className='relative flex w-full h-full justify-center items-center'>
-                            <CarouselContent className='flex w-[380px] h-[250px] '>
+                            <CarouselContent className='flex'>
                                 <CarouselItem  className='relative flex w-full h-full'>
                                     <Image
                                         src={`${baseUrl}${imageLink}`}
@@ -122,19 +125,23 @@ export default function ProjectCard({
                         </Carousel>
                     </div>
 
-                    <span className='flex text-center text-[15px] lg:text-[20px] items-center justify-center'> {logoName} </span>
-                    <span className='flex text-center text-[11px] lg:text-[12px] items-center justify-center px-5'>
+                    <span className='flex text-center text-[15px] lg:text-[18px] items-center justify-center'> {logoName} </span>
+                    <span className='flex text-center text-[11px] lg:text-[12px] items-center justify-center mx-auto'>
                         {date} 
                     </span>
-                    <span className='flex text-center text-[11px] lg:text-[12px] items-center justify-center px-5'>
+                    <span className='flex text-center text-[11px] lg:text-[12px] items-center justify-center mb-[5%]'>
                         {tags.map((exp, index) => (
-                        <span className='border-1 px-2 mx-1 rounded-[10px] bg-Primary-500/10 border-Primary-400/50' key={index}> {exp} </span>
+                        <span className='border-1 px-[4%] mx-[2%] rounded-[10px] bg-Primary-500/10 border-Primary-400/50' key={index}> {exp} </span>
                         ))}  
                     </span>
                     </div>
                 </SheetTrigger>
                 
-                <SheetContent side='bottom' className='text-[14px] lg:text-[15px] justify-center-safe bg-foreground dark:bg-background text-white rounded-2xl font-family-Lufga fixed left-1/2 -translate-x-1/2 bottom-1/2 translate-y-1/2 max-h-screen w-[90%] max-w-[1250px]'>
+                <SheetContent side='bottom'     
+                    className='text-[12px] sm:text-[14px] lg:text-[15px]  overflow-y-auto max-h-screen
+                            justify-center-safe bg-foreground dark:bg-background text-white rounded-2xl font-family-Lufga 
+                            fixed left-1/2 -translate-x-1/2 bottom-1/2 translate-y-1/2 w-[90%] max-w-[1250px]'>
+                    
                     <SheetHeader>
                     <SheetTitle></SheetTitle>
                     <SheetDescription></SheetDescription>                    
@@ -142,7 +149,7 @@ export default function ProjectCard({
 
                     {/* Card Open*/}
                     <div className="flex w-full mx-auto justify-center items-center text-center flex-col gap-3 mb-10">
-                    <span className="text-4xl px-[15%]">{logoName}</span>
+                    <span className="text-[200%] px-[15%]">{logoName}</span>
                     <span className="text-Primary-400 px-[15%]">{place}</span>
                     <span className="text-gray-400 px-[15%]">{date}</span>
                     <span className="text-Primary-200 px-[15%]">Team Size : {size}</span>
@@ -189,8 +196,8 @@ export default function ProjectCard({
                                 {Array.from({ length: count }).map((_, index) => (
                                 <span
                                     key={index}
-                                    className={`h-4 rounded-full transition-all duration-300 ${
-                                    current-1 === index ? "w-10 bg-Primary-500" : "w-4 bg-gray-500"
+                                    className={`h-2 md:h-4 rounded-full transition-all duration-300 ${
+                                    current-1 === index ? "w-5 md:w-10 bg-Primary-500" : "w-2 md:w-4 bg-gray-500"
                                     }`}
                                 />
                                 ))}
@@ -215,8 +222,8 @@ export default function ProjectCard({
                                 {Array.from({ length: count }).map((_, index) => (
                                 <span
                                     key={index}
-                                    className={`h-4 rounded-full transition-all duration-300 ${
-                                    current-1 === index ? "w-10 bg-Primary-500" : "w-4 bg-gray-500"
+                                    className={`h-2 md:h-4 rounded-full transition-all duration-300 ${
+                                    current-1 === index ? "w-5 md:w-10 bg-Primary-500" : "w-2 md:w-4 bg-gray-500"
                                     }`}
                                 />
                                 ))}
@@ -230,7 +237,7 @@ export default function ProjectCard({
                     
                     <hr className="w-[80%] bg-Primary-500/50 border-Primary-500/50"/>
                     <div className="px-[10%] text-start">
-                        <span className="text-Primary-500 text-2xl font-semibold">Contribution - </span> {cquote}
+                        <span className="text-Primary-500 text-[120%] font-semibold">Contribution - </span> {cquote}
                         <br/>  
                         <ul className="list-disc ml-5 font-normal md:px-[25%] marker:text-Primary-500">
                             {contributiondesc.map((item, index) => (
@@ -245,9 +252,9 @@ export default function ProjectCard({
                                 className={`
                                     font-family-Lufga mx-auto 
                                     border-gray-200 border-2
-                                    w-[50%] h-[50px] rounded-[10px] text-[20px] 
+                                    w-[70%] lg:max-w-[50%] h-[50px] rounded-[10px] 
                                     flex items-center justify-center 
-                                    font-normal  text-gray-200 ho
+                                    font-normal  text-gray-200
                                 `}
                             >No Links Found</button>
                             :linkList.map((exp,index) => 
@@ -257,7 +264,7 @@ export default function ProjectCard({
                                     font-family-Lufga
                                     cursor-pointer 
                                     border-Primary-400 border-2 mx-auto
-                                    w-full md:max-w-[30%] h-[50px] rounded-[10px] md:text-[15px] 
+                                    w-full md:max-w-[30%] h-[35px] md:h-[50px] rounded-[10px] md:text-[15px] 
                                     flex items-center justify-center transition duration-200 
                                     font-normal hover:bg-Primary-500/10 text-Primary-500 hover:scale-x-[105%] hover:px-5
                                 `}

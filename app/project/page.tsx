@@ -131,7 +131,7 @@ export default function Home() {
             <hr className="custom-hr2"/>
             
             {/* TAGS */}
-            <div className='w-full flex-row mx-auto justify-center flex h-auto gap-2'>
+            <div className='w-full flex-row mx-auto justify-center flex h-auto gap-2 text-[70%] md:text-[90%] lg:text-[100%]'>
               
               <div className="flex flex-[70%] flex-wrap justify-start font-family-Lufga dark:text-white duration-200 px-2">
                 <FilterButton onClick={() => clearTags() }> All </FilterButton>
@@ -176,7 +176,7 @@ export default function Home() {
             </div>  
             
             <div className='w-full mx-auto h-auto justify-center flex min-h-[20vh]'>
-              <div className="flex flex-wrap gap-5 justify-between py-[2%] font-family-Lufga dark:text-white duration-200">
+              <div className="flex flex-wrap gap-5 justify-between py-[2%] font-family-Lufga dark:text-white duration-200 ">
                 {filteredData.map((exp, index) => (
                   <ProjectCard key={index} 
                   logoName={exp.title} 
