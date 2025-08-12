@@ -78,16 +78,6 @@ export function SchoolHystory() {
 export function ToolHystory() {
   return [    
     {
-      link: '/Images/Tools/arduino.svg',
-      name: "Arduino",
-      invert: false,
-    }, 
-    {
-      link: '/Images/Tools/css.svg',
-      name: "CSS",
-      invert: false,
-    }, 
-    {
       link: '/Images/Tools/Unity.svg',
       name: "Unity Engine",
       invert: false,
@@ -97,6 +87,26 @@ export function ToolHystory() {
       name: "Unreal Engine",
       invert: false,
     },
+    {
+      link: '/Images/Tools/CSharp.svg',
+      name: "CSharp",
+      invert: false,
+    },
+    {
+      link: '/Images/Tools/arduino.svg',
+      name: "Arduino",
+      invert: false,
+    }, 
+    {
+      link: '/Images/Tools/raspberry.svg',
+      name: "Raspberry PI",
+      invert: false,
+    },
+    {
+      link: '/Images/Tools/css.svg',
+      name: "CSS",
+      invert: false,
+    }, 
     {
       link: '/Images/Tools/Audacity.svg',
       name: "Audacity",
@@ -115,11 +125,6 @@ export function ToolHystory() {
     {
       link: '/Images/Tools/Illustrator.svg',
       name: "Illustrator",
-      invert: false,
-    },
-    {
-      link: '/Images/Tools/AndroidStudio.svg',
-      name: "AndroidStudio",
       invert: false,
     },
     {
@@ -153,13 +158,13 @@ export function ToolHystory() {
       invert: false,
     },
     {
-      link: '/Images/Tools/CSharp.svg',
-      name: "CSharp",
+      link: '/Images/Tools/C.svg',
+      name: "C",
       invert: false,
     },
     {
-      link: '/Images/Tools/C.svg',
-      name: "C",
+      link: '/Images/Tools/AndroidStudio.svg',
+      name: "AndroidStudio",
       invert: false,
     },
     {
@@ -190,11 +195,6 @@ export function ToolHystory() {
     {
       link: '/Images/Tools/miro.svg',
       name: "Miro",
-      invert: false,
-    },
-    {
-      link: '/Images/Tools/raspberry.svg',
-      name: "Raspberry PI",
       invert: false,
     },
     {
