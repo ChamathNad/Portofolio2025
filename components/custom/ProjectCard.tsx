@@ -88,20 +88,20 @@ export default function ProjectCard({
     return (       
 
         <Sheet open={show} onOpenChange={setShow}>
-                <SheetTrigger className='flex mx-auto not-md:w-full '>
+                <SheetTrigger className={`flex mx-auto not-md:w-full ${className}`}>
                     {/* Card */}
-                    <div className={`${className}  shadow-gray-600 bg-foreground/80 text-white dark:bg-white/20 border-Primary-500/50 
+                    <div className={`shadow-gray-600 bg-foreground/80 text-white dark:bg-white/20 border-Primary-500/50 
                         relative flex flex-col mx-auto gap-1 m-1 border-2 rounded-3xl justify-between
-                        h-auto w-[80%] md:max-w-[30vh] aspect-[5/4] overflow-clip
-                        hover:scale-[110%] duration-500 shadow-lg`}
+                        h-auto w-[90%] md:max-w-[30vh] aspect-[5/4] overflow-clip
+                        hover:scale-[110%] duration-500 shadow-lg `}
                         onMouseEnter={() => { if (autoplay?.current && images.length > 0) { autoplay.current.play(); }}}
                         onMouseLeave={() => {autoplay.current?.stop(); autoplay.current?.reset();}}
                         onClick={() => {autoplay.current?.stop(); autoplay.current?.reset();}}
                     >
                     
-                    <div className={`relative w-full h-[70%] flex items-center duration-500 border-b-3 border-Primary-500/50  overflow-clip`} >           
-                        <Carousel plugins={[autoplay.current]} className='relative flex w-full h-full justify-center items-center'>
-                            <CarouselContent className='flex'>
+                    <div className={`relative w-full h-[70%]  flex items-center duration-500 border-b-3 border-Primary-500/50  overflow-clip`} >           
+                        <Carousel plugins={[autoplay.current]} className='relative  flex w-full h-full justify-center items-center'>
+                            <CarouselContent >
                                 <CarouselItem  className='relative flex w-full h-full'>
                                     <Image
                                         src={`${baseUrl}${imageLink}`}
