@@ -22,7 +22,7 @@ export const NavigationProvider = ({ children }: { children: ReactNode }) => {
   const TransTime = 200;
 
   // ✅ Map routes to index
-  const routeMap: Record<string, number> = {
+  const routeMap1: Record<string, number> = {
     '/': 1,
     '/resume': 2,
     '/project': 3,
@@ -62,7 +62,7 @@ export const NavigationProvider = ({ children }: { children: ReactNode }) => {
 
   // ✅ Update activeIndex whenever path changes (back/forward/swipe)
   useEffect(() => {
-    setActiveIndex(routeMap[pathname] || 1);
+    setActiveIndex(routeMap1[pathname] || 1);
   }, [pathname]);
   
 
