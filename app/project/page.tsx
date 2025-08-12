@@ -175,8 +175,7 @@ export default function Home() {
               </div>
             </div>  
             
-            <div className='w-full mx-auto h-auto justify-center flex min-h-[20vh]'>
-              <div className="flex flex-wrap gap-5 justify-between py-[2%] font-family-Lufga dark:text-white duration-200 ">
+            <div className="flex flex-wrap gap-5 justify-between py-[2%] font-family-Lufga dark:text-white duration-200">
                 {filteredData.map((exp, index) => (
                   <ProjectCard key={index} 
                   logoName={exp.title} 
@@ -194,21 +193,18 @@ export default function Home() {
                   videos ={exp.videos}
                   />
                 ))}            
-              </div>            
-            </div>
+              </div> 
             
             <hr className="custom-hr2"/>
             
             <h1 className="not-lg:mx-auto text-[40px] lg:text-[50px] font-bold mt-2 text-Primary-500 font-family-Lufga px-[6%]">Events</h1>
             
-            <div className='w-full mx-auto h-auto justify-center flex min-h-[20vh]'>
-              <div className="flex flex-wrap gap-5 justify-between py-[2%] font-family-Lufga dark:text-white duration-200">
+            <div className="flex flex-wrap gap-5 justify-between py-[2%] font-family-Lufga dark:text-white duration-200">
                 {filteredEvents.map((exp, index) => (
                   <EventCard key={index}  data={exp}
                   />
                 ))}            
-              </div>            
-            </div>
+              </div> 
             <hr className="custom-hr2"/>
             <HomeFooter />
           </Container>
