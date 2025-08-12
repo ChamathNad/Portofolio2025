@@ -131,8 +131,8 @@ export default function HomePage()
               <ToggleButtons 
                 children1={<><span>Projects</span></>}
                 children2={<><span>Resume</span></>} 
-                Link1={() => handleClick(3,'/project')}
-                Link2={() => handleClick(2,'/resume')}
+                Link1={() => handleClick(3)}
+                Link2={() => handleClick(2)}
                 />
 
               {/* Splash Images */}
@@ -343,7 +343,7 @@ export default function HomePage()
 
                 <div className="relative flex max-w-[100%] translate-y-[480px] z-25">
                     <button     
-                        onClick={() => handleClick(2,'/project')}               
+                        onClick={() => handleClick(2)}               
                         className="
                             font-family-Lufga
                             cursor-pointer border-Primary-400

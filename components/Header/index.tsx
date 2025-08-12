@@ -18,11 +18,11 @@ export default function Header(){
             {/*PC Bar */}    
             <div className=' pl-[70px] pr-[70px] max-w-[1340px] not-lg:hidden pt-[50px] '>
                 <Container className='flex flex-row gap-[20px] bg-black dark:bg-gray-300 rounded-[50px] p-[10px]'> 
-                        <HeaderButton onClick={() => handleClick(1,'/')} isActive={activeIndex === 1}><HomeIcon className='mr-[10px]'/> Home</HeaderButton>
-                        <HeaderButton onClick={() => handleClick(2,'/resume')} isActive={activeIndex === 2}><ReadCvLogoIcon className='mr-[10px]'/>Resume</HeaderButton>
+                        <HeaderButton onClick={() => handleClick(1)} isActive={activeIndex === 1}><HomeIcon className='mr-[10px]'/> Home</HeaderButton>
+                        <HeaderButton onClick={() => handleClick(2)} isActive={activeIndex === 2}><ReadCvLogoIcon className='mr-[10px]'/>Resume</HeaderButton>
                         <Logo />
-                        <HeaderButton onClick={() => handleClick(3,'/project')} isActive={activeIndex === 3}><PackageIcon className='mr-[10px]'/>Project</HeaderButton>
-                        <HeaderButton onClick={() => handleClick(4,'/about')} isActive={activeIndex === 4}><GlobeIcon className='mr-[10px]'/>Contact</HeaderButton>
+                        <HeaderButton onClick={() => handleClick(3)} isActive={activeIndex === 3}><PackageIcon className='mr-[10px]'/>Project</HeaderButton>
+                        <HeaderButton onClick={() => handleClick(4)} isActive={activeIndex === 4}><GlobeIcon className='mr-[10px]'/>Contact</HeaderButton>
                 </Container>
             </div>
 
@@ -35,7 +35,7 @@ export default function Header(){
 
                         <button className={`font-family-Lufga cursor-pointer w-[10%] h-auto text-[40px] max-w-[15%] flex justify-center items-center 
                                     bg-transparent text-white dark:text-black rounded-[15px] border-Primary-400 dark:border-black hover:border-1  ml-[3%]`}
-                                    onClick={() => handleClick(2,'/resume')} >
+                                    onClick={() => handleClick(2)} >
                                         <ReadCvLogoIcon/>
                         </button>
                 </Container>

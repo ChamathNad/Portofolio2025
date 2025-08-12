@@ -92,7 +92,7 @@ export default function ProjectCard({
                     {/* Card */}
                     <div className={`${className}  shadow-gray-600 bg-foreground/80 text-white dark:bg-white/20 border-Primary-500/50 
                         relative flex flex-col mx-auto gap-1 m-1 border-2 rounded-3xl justify-between
-                        h-auto w-[80%] sm:max-w-[30vh] aspect-[5/4] overflow-clip
+                        h-auto w-[80%] md:max-w-[30vh] aspect-[5/4] overflow-clip
                         hover:scale-[110%] duration-500 shadow-lg`}
                         onMouseEnter={() => { if (autoplay?.current && images.length > 0) { autoplay.current.play(); }}}
                         onMouseLeave={() => {autoplay.current?.stop(); autoplay.current?.reset();}}

@@ -1,11 +1,11 @@
 'use client';
-import { createContext, useContext, useState, ReactNode } from 'react';
-import { useRouter } from 'next/navigation';
+import { createContext, useContext, useState, ReactNode, useEffect  } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
 
 interface NavigationContextProps {
   activeIndex: number | null;
   setActiveIndex: (index: number | null) => void;
-  handleClick: (index: number, href: string) => void;
+  handleClick: (index: number) => void;
   handleTransition: (href: string) => void;
 }
 
@@ -18,7 +18,22 @@ function sleep(ms:number) : Promise<void>{
 export const NavigationProvider = ({ children }: { children: ReactNode }) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(1);
   const router = useRouter();
+  const pathname = usePathname();
   const TransTime = 200;
+
+  // ✅ Map routes to index
+  const routeMap: Record<string, number> = {
+    '/': 1,
+    '/resume': 2,
+    '/project': 3,
+    '/about': 4,
+  };
+  const indexMap: Record<number, string> = {
+  1: '/',
+  2: '/resume',
+  3: '/project',
+  4: '/about',
+  };
 
   const handleTransition = async (href: string) => {
     const container = document.querySelector<HTMLElement>(".mainContainer");
@@ -37,13 +52,19 @@ export const NavigationProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
-  const handleClick = (index: number, href: string) => {
+  const handleClick = (index: number) => {
     
     if(index != activeIndex){
       setActiveIndex(index);
-      handleTransition(href);
+      handleTransition(indexMap[index]);
     }
   };
+
+  // ✅ Update activeIndex whenever path changes (back/forward/swipe)
+  useEffect(() => {
+    setActiveIndex(routeMap[pathname] || 1);
+  }, [pathname]);
+  
 
   return (
     <NavigationContext.Provider

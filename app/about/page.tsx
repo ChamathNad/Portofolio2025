@@ -65,12 +65,16 @@ export default function Home() {
 
               <div className="flex flex-col justify-between gap-4">
                 {SocialData.map((exp,index) => (                    
-                  <div key={index}>
+                  <div key={index} >
                     <a className="flex flex-row items-center gap-2 group hover:font-bold" href={exp.links}>
                       <span className="text-[200%] border-2 p-[1%] border-black/30 dark:border-white/30 group-hover:border-Primary-500">
                         {exp.Logo}
                       </span>
-                      <strong className="group-hover:text-Primary-500 min-w-[15%]">{exp.Id} :</strong> {exp.rawlinks}
+                      <strong className="group-hover:text-Primary-500 flex-[4]">{exp.Id} </strong>
+                      <span className="flex-[1]">:</span>
+                      <span className="border-1 rounded-2xl p-[2%] overflow-clip flex-[8] not-md:max-w-[45%]">
+                        {exp.rawlinks}                        
+                      </span>
                     </a>
                   </div> 
                 ))}               

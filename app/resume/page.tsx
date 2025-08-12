@@ -56,8 +56,8 @@ export default function Home() {
               <span className='flex-[1] font-bold text-[200%] text-Primary-500'>Projects</span>
             </div>
             <div className=' flex w-[full] px-[15%] z-5 font-family-Lufga duration-200 pb-[3%]'>
-               <div className='p-1 px-[15%] bg-gray-50/20 w-[full] border-2 text-2xl hover:font-bold hover:text-Primary-500 hover:bg-white/20 rounded-3xl flex justify-center cursor-pointer gap-2 group/line duration-300' 
-                    onClick={() => handleClick(3,'/project')}>
+               <div className='p-1 px-[15%] bg-gray-50/20 w-[full] border-2 text-[120%] hover:font-bold hover:text-Primary-500 hover:bg-white/20 rounded-3xl flex justify-center cursor-pointer gap-2 group/line duration-300' 
+                    onClick={() => handleClick(3)}>
                 Check my Work... 
                 <ArrowUpRightIcon className='hidden group-hover/line:block duration-500' weight='bold' size={25} />
                </div>
