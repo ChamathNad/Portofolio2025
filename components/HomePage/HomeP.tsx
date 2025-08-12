@@ -343,7 +343,7 @@ export default function HomePage()
 
                 <div className="relative flex max-w-[100%] translate-y-[480px] z-25">
                     <button     
-                        onClick={() => handleClick(2)}               
+                        onClick={() => handleClick(3)}               
                         className="
                             font-family-Lufga
                             cursor-pointer border-Primary-400
