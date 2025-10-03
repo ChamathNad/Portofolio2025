@@ -1,24 +1,38 @@
 'use client';
 import Container from "@/components/custom/Container";
+import DownloadButton from "@/components/custom/DownloadButton";
+import InterestIcon from "@/components/custom/InterestIcon";
 import { useNavigation } from "@/components/custom/navigation";
 import ToolIcon from "@/components/custom/ToolIcon";
 import WorkXPRow from "@/components/custom/WorkXpRow";
 import HomeFooter from "@/components/HomePage/Footer";
-import { SchoolHystory, ToolHystory, WorkHystory } from "@/lib/localData";
+import { InterestHystory, InterestObj, SchoolHystory, ToolHystory, ToolObj, WorkHystory } from "@/lib/localData";
 import { ArrowUpRightIcon } from "@phosphor-icons/react";
 import Image from 'next/image';
+import { useEffect, useState } from "react";
 
 
 export default function Home() {
   
     const experienceData = WorkHystory();
     const schoolData = SchoolHystory();
+    const [InterestData, setInterest] = useState<InterestObj[]>([]);
     const { handleClick} = useNavigation();
-    const ToolsData = ToolHystory();
+    const [ToolsData, setTools] = useState<ToolObj[]>([]);
+
+    useEffect(() => {
+      ToolHystory().then(setTools);
+      InterestHystory().then(setInterest);
+    }, []);
     
   return (
       <div className="w-full p-1">
         <Container className="flex-row justify-center bg-background w-full min-h-[80vh] lg:max-w-[1200px] overflow-x-clip text-[90%] sm:text-[100%] lg:text-[120%]">
+          <hr className="custom-hr"/>
+          <div className="flex gap-[3%] px-[3%]">
+            <DownloadButton onClick={()=> handleClick(5)} isGame={true}> GameDev CV </DownloadButton>
+            <DownloadButton onClick={()=> handleClick(6)} isGame={false}> WebDev CV </DownloadButton>
+          </div>
           <hr className="custom-hr"/>
           <div className="mx-auto flex flex-col md:flex-row justify-between font-family-Lufga px-[12%] py-6 duration-600">
             <div className="flex flex-[2] items-center justify-center">
@@ -87,7 +101,21 @@ export default function Home() {
           <div className='w-full mx-auto h-auto justify-center flex '>
             <div className="flex flex-wrap justify-between gap-x-8 px-[15%] py-[3%] z-5 font-family-Lufga dark:text-white duration-200">
               {ToolsData.map((exp, index) => (
-                <ToolIcon key={index} imageLink={exp.link} logoName={exp.name} invert={exp.invert} className="w-[42%] md:w-[20%]"/>
+                <ToolIcon key={index} imageLink={exp.Link} logoName={exp.Name} invert={exp.Invert} className="w-[42%] md:w-[20%]"/>
+              ))}            
+            </div>            
+          </div>
+          <hr className="custom-hr"/>
+
+          <div className='w-full h-auto justify-start flex'>
+            <div className='py-[3%] not-xl:w-[100vh] flex px-[12%] z-5 font-family-Lufga dark:text-white duration-200'>
+              <span className='flex-[1] font-bold text-[200%] text-Primary-500'>Interests & Hobbies</span>
+            </div>
+          </div>
+          <div className='w-full mx-auto h-auto justify-center flex '>
+            <div className="flex flex-wrap justify-between gap-x-8 px-[15%] py-[3%] z-5 font-family-Lufga dark:text-white duration-200">
+              {InterestData.map((exp, index) => (
+                <InterestIcon key={index} imageLink={exp.Icon} logoName={exp.Name} className="w-[42%] md:w-[20%]"/>
               ))}            
             </div>            
           </div>

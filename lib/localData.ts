@@ -37,12 +37,6 @@ export function WorkHystory() {
       time: 'Jan 2020 - Aug 2020',
       description: 'Worked on React/React Native App Development',
     },
-    {
-      place: 'USJP Colombo',
-      title: 'Student',
-      time: 'Jan 2016 - Dec 2019',
-      description: 'BSc in Physics Science - ICT',
-    },
   ];
 }
 
@@ -75,134 +69,45 @@ export function SchoolHystory() {
   ];
 }
 
-export function ToolHystory() {
-  return [    
-    {
-      link: '/Images/Tools/Unity.svg',
-      name: "Unity Engine",
-      invert: false,
-    }, 
-    {
-      link: '/Images/Tools/Unreal.svg',
-      name: "Unreal Engine",
-      invert: false,
-    },
-    {
-      link: '/Images/Tools/CSharp.svg',
-      name: "CSharp",
-      invert: false,
-    },
-    {
-      link: '/Images/Tools/arduino.svg',
-      name: "Arduino",
-      invert: false,
-    }, 
-    {
-      link: '/Images/Tools/raspberry.svg',
-      name: "Raspberry PI",
-      invert: false,
-    },
-    {
-      link: '/Images/Tools/css.svg',
-      name: "CSS",
-      invert: false,
-    }, 
-    {
-      link: '/Images/Tools/Audacity.svg',
-      name: "Audacity",
-      invert: false,
-    },
-    {
-      link: '/Images/Tools/NextJs.svg',
-      name: "NextJs",
-      invert: false,
-    },
-    {
-      link: '/Images/Tools/Photoshop.svg',
-      name: "Photoshop",
-      invert: false,
-    },
-    {
-      link: '/Images/Tools/Illustrator.svg',
-      name: "Illustrator",
-      invert: false,
-    },
-    {
-      link: '/Images/Tools/SubPainter.svg',
-      name: "SubPainter",
-      invert: false,
-    },
-    {
-      link: '/Images/Tools/Figma.svg',
-      name: "Figma",
-      invert: false,
-    },
-    {
-      link: '/Images/Tools/Fusion360.svg',
-      name: "Fusion360",
-      invert: false,
-    },
-    {
-      link: '/Images/Tools/React.svg',
-      name: "React",
-      invert: false,
-    },
-    {
-      link: '/Images/Tools/Js.svg',
-      name: "Js",
-      invert: false,
-    },
-    {
-      link: '/Images/Tools/Python.svg',
-      name: "Python",
-      invert: false,
-    },
-    {
-      link: '/Images/Tools/C.svg',
-      name: "C",
-      invert: false,
-    },
-    {
-      link: '/Images/Tools/AndroidStudio.svg',
-      name: "AndroidStudio",
-      invert: false,
-    },
-    {
-      link: '/Images/Tools/html.svg',
-      name: "html",
-      invert: false,
-    },
-    {
-      link: '/Images/Tools/blender.svg',
-      name: "Blender",
-      invert: false,
-    },
-    {
-      link: '/Images/Tools/vscode.svg',
-      name: "Vscode",
-      invert: false,
-    },
-    {
-      link: '/Images/Tools/angular.svg',
-      name: "Angular",
-      invert: false,
-    },
-    {
-      link: '/Images/Tools/git.svg',
-      name: "git",
-      invert: false,
-    },
-    {
-      link: '/Images/Tools/miro.svg',
-      name: "Miro",
-      invert: false,
-    },
-    {
-      link: '/Images/Tools/zbrush-svgrepo-com 1.svg',
-      name: "Zbrush",
-      invert: true,
-    },
-  ];
+
+export type ToolObj = {
+  Name: string;
+  Link: string;
+  Invert : boolean;
+  PrioGame: number,
+  PrioWeb: number,
+  Icon:string
+};
+
+export async function ToolHystory(): Promise<ToolObj[]>  {
+  const spreadsheetId = "1Irw9K6EsWuJE5NC81GfPJPBzI6NI98K91YoZ2KwN1qc";
+  const apiKey = process.env.NEXT_PUBLIC_CLOUDINARY_GOOGLE_API;
+  const sheetName = "Tools";
+
+  const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${sheetName}?key=${apiKey}`;
+  const res = await fetch(url);
+  const data: { values?: string[][] } = await res.json();
+
+  const values = data.values || [];
+  const [header, ...rows] = values;
+
+  const mytools: ToolObj[] = rows.map((row: string[]) => {
+    const obj: Record<string, string> = {};
+    header.forEach((key, i) => {
+      obj[key] = row[i] || "";
+    });
+
+    return {
+      Name: obj.Name,
+      Link: obj.Link,
+      Invert : obj.Invert?.toLowerCase() === "true",
+      PrioGame : parseInt(obj.PrioGame),
+      PrioWeb : parseInt(obj.PrioWeb),
+      Icon : obj.Icon,
+    };
+  });
+
+  return mytools;
 }
 
 //PROJECT FILES
@@ -221,6 +126,12 @@ export type Project = {
   linkList: { name: string; type: string; link: string }[];
   videos: string[];
   enable: boolean;
+  CVDesc: string;
+  CVTags : string;
+  portofolio : boolean;
+  icon: string,
+  gameCV: boolean,
+  webCV: boolean
 };
 export async function ProjectList(): Promise<Project[]> {
   const spreadsheetId = "1Irw9K6EsWuJE5NC81GfPJPBzI6NI98K91YoZ2KwN1qc";
@@ -260,6 +171,12 @@ export async function ProjectList(): Promise<Project[]> {
         : [],
       videos: obj.videos ? obj.videos.split(",").map((v) => v.trim()) : [],
       enable: obj.enable?.toLowerCase() === "true",
+      CVDesc: obj.CVDesc,
+      CVTags: obj.CVTags,
+      portofolio : obj.portofolio?.toLowerCase() === "true",
+      icon: obj.icon,
+      gameCV : obj.gameCV?.toLowerCase() === "true",
+      webCV : obj.webCV?.toLowerCase() === "true",
     };
   });
 
@@ -280,6 +197,8 @@ export type Event = {
   cdescription: string[];
   linkList: { name: string; type: string; link: string }[];
   enable: boolean;
+  CVdes: string;
+  icon: string,
 };
 export async function EventsList(): Promise<Event[]>  {
   const spreadsheetId = "1Irw9K6EsWuJE5NC81GfPJPBzI6NI98K91YoZ2KwN1qc";
@@ -316,8 +235,47 @@ export async function EventsList(): Promise<Event[]>  {
           })
         : [],
       enable: obj.enable?.toLowerCase() === "true",
+      CVdes: obj.CVdes,
+      icon: obj.icon,
     };
   });
 
   return events;
+}
+
+//INTEREST FILES
+export type InterestObj = {
+  Name: string;
+  Icon:string;
+  CV:boolean;
+  Link: string;
+};
+
+export async function InterestHystory(): Promise<InterestObj[]>  {
+  const spreadsheetId = "1Irw9K6EsWuJE5NC81GfPJPBzI6NI98K91YoZ2KwN1qc";
+  const apiKey = process.env.NEXT_PUBLIC_CLOUDINARY_GOOGLE_API;
+  const sheetName = "Interests";
+
+  const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${sheetName}?key=${apiKey}`;
+  const res = await fetch(url);
+  const data: { values?: string[][] } = await res.json();
+
+  const values = data.values || [];
+  const [header, ...rows] = values;
+
+  const mytools: InterestObj[] = rows.map((row: string[]) => {
+    const obj: Record<string, string> = {};
+    header.forEach((key, i) => {
+      obj[key] = row[i] || "";
+    });
+
+    return {
+      Name: obj.Name,
+      Icon : obj.Icon,
+      CV : obj.CV?.toLowerCase() === "true",
+      Link : obj.Link,
+    };
+  });
+
+  return mytools;
 }

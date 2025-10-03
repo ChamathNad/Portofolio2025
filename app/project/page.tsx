@@ -96,7 +96,7 @@ export default function Home() {
       const filteredData = PList.filter(item => {
         const tagMatch = activeTags.length === 0 || item.tags.some(tag => activeTags.includes(tag));   
         const searchMatch = JSON.stringify(item).toLowerCase().includes(searchTerm.toLowerCase());
-        return tagMatch && searchMatch;
+        return tagMatch && searchMatch && item.portofolio;
       }).map(item => {
         if (HideUnreleased && item.enable === false) {
           return {

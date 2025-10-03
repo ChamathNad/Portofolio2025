@@ -52,6 +52,7 @@ export default function Home() {
           footer: false,
         }, 
       ];
+      
   return (
         <div className="w-full p-[1%]">
           <Container className="flex flex-col justify-center bg-background w-full min-h-[80vh] ">            

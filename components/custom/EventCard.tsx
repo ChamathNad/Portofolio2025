@@ -88,6 +88,7 @@ export default function EventCard({
                     {/* Card Open*/}
                     <div className="flex w-full mx-auto justify-center items-center text-center flex-col gap-3 mb-10">
                     <span className="text-[200%] px-[15%]">{data.title}</span>
+                    <span className="text-Primary-400 px-[15%]">{data.org}</span>
                     <span className="text-gray-400 px-[15%]">{data.data}</span>
                     <hr className="w-[80%] bg-Primary-500/50 border-Primary-500/50"/>
 

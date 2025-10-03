@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 
 export default function ClientTransitionWrapper({
   children,
@@ -9,6 +10,18 @@ export default function ClientTransitionWrapper({
 }) {
   const ref = useRef<HTMLDivElement | null>(null);
 
+
+  const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setIsLoading(true);
+    const timer = setTimeout(() => setIsLoading(false), 500); // minimum loader
+    return () => clearTimeout(timer);
+  }, [pathname]);
+
+  
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
@@ -25,7 +38,11 @@ export default function ClientTransitionWrapper({
 
   return (
     <div ref={ref} className="mainContainer">
-      {children}
+      {isLoading ? (
+          <div className="flex m-auto items-center justify-center w-[50vw] h-[50vh] align-middle">
+            <div className="border-t-transparent rounded-full animate-spin border-Primary-500 w-[50%] max-w-[400px] aspect-square border-[1vw] lg:border-8 "></div>
+          </div>
+        ) : (children)}
     </div>
   );
 }
