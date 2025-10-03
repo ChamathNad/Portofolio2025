@@ -1,9 +1,9 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { FaDownload } from 'react-icons/fa';
 import { CV1 } from '../PDFs';
 import { BlobProvider } from '@react-pdf/renderer';
-import Spinner from '../ui/spinner';
+import { DownloadHandler } from './DownloadHandler';
 
 
 
@@ -60,22 +60,15 @@ export default function DownloadButton({
                 dark:bg-Primary-500/80 dark:group-hover:bg-Primary-500
                 justify-items-center duration-200 rounded-r-[60px] '> 
                 {!downloaded && (
-                    <BlobProvider document={cvDoc}>
-                        {({ url, loading }) => {
-                            useEffect(() => {
-                                if (!loading && url && !downloaded) {
-                                    const timer = setTimeout(() => {
-                                    const link = document.createElement("a");
-                                    link.href = url;
-                                    link.download = "CV.pdf";
-                                    link.click();
-                                    setDownloaded(true);
-                                    }, 200); // ⏳ wait 1 sec before downloading
-                                    return () => clearTimeout(timer);                                
-                                }
-                            }, [url, loading, downloaded]);
-                            return loading ? <Spinner attributes="border-white w-[30px] h-[30px] border-[5px] mx-auto" /> : <FaDownload className='mx-auto  duration-200'/>;                        
-                        }}
+                     <BlobProvider document={cvDoc}>
+                    {({ url, loading }) => (
+                        <DownloadHandler
+                        url={url}
+                        loading={loading}
+                        downloaded={downloaded}
+                        setDownloaded={setDownloaded}
+                        />
+                    )}
                     </BlobProvider>
                 )}
                 {downloaded && (<FaDownload className='mx-auto  duration-200'/>)}

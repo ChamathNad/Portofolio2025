@@ -3,14 +3,15 @@ import { CV1, PDFViewer } from "@/components/PDFs";
 
 
 export default function Home(){
+
   
   const cvDoc = (
     <CV1
-      primaryColor= "#FB923C"
+      primaryColor="#3C92CB"
       BackgroundColor="#202025"
-      secondaryColor= "#FDD9AE"
-      GameCV={true}
-      frameImage= "/frame.png" 
+      secondaryColor="#BED9FD"
+      GameCV={false}
+      frameImage="/frame2.png"
     />
   );
 

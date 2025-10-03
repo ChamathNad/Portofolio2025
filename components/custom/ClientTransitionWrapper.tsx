@@ -1,6 +1,6 @@
 "use client";
 
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 export default function ClientTransitionWrapper({
@@ -12,7 +12,6 @@ export default function ClientTransitionWrapper({
 
 
   const [isLoading, setIsLoading] = useState(false);
-  const router = useRouter();
   const pathname = usePathname();
 
   useEffect(() => {

@@ -1,6 +1,6 @@
 'use client';
 import { createContext, useContext, useState, ReactNode, useEffect  } from 'react';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 interface NavigationContextProps {
   activeIndex: number | null;
@@ -18,26 +18,25 @@ function sleep(ms:number) : Promise<void>{
 export const NavigationProvider = ({ children }: { children: ReactNode }) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(1);
   const router = useRouter();
-  const searchParams = useSearchParams();
   const pathname = usePathname();
   const TransTime = 200;
 
   // ✅ Map routes to index
-  const routeMap1: Record<string, number> = {
+  const routeMap1: Record <string, number> = {
     '/': 1,
     '/resume': 2,
     '/project': 3,
     '/about': 4,
-    '/CVs?game=true' : 5,
-    '/CVs?game=false' : 6,
+    '/CVs': 5,
+    '/CVs2': 6,
   };
   const indexMap: Record<number, string> = {
     1: '/',
     2: '/resume',
     3: '/project',
     4: '/about',
-    5: '/CVs?game=true',
-    6: '/CVs?game=false',
+    5: '/CVs',
+    6: '/CVs2',
   };
 
   const handleTransition = async (href: string) => {
@@ -68,11 +67,9 @@ export const NavigationProvider = ({ children }: { children: ReactNode }) => {
 
   // ✅ Update activeIndex whenever path changes (back/forward/swipe)
   useEffect(() => {
-    
-    setActiveIndex(routeMap1[pathname + (searchParams.size > 0? '?'+searchParams : "")] || 1);
+    setActiveIndex(routeMap1[pathname]);
   }, [pathname]);
   
-
   return (
     <NavigationContext.Provider
       value={{
