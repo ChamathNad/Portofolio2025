@@ -12,6 +12,7 @@ export default function Home(){
       secondaryColor="#BED9FD"
       GameCV={false}
       frameImage="/frame2.png"
+      PhotoImage= "/Photo2.png"
     />
   );
 

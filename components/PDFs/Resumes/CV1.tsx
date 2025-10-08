@@ -106,7 +106,7 @@ const SocialData =
 
 
 export const CV1 = ({
-        primaryColor, secondaryColor,BackgroundColor, GameCV, frameImage
+        primaryColor, secondaryColor,BackgroundColor, GameCV, frameImage, PhotoImage
     }:{
         primaryColor?: string,
         secondaryColor?: string,
@@ -114,6 +114,7 @@ export const CV1 = ({
         GameCV?: boolean,
         WebCV?: boolean,
         frameImage? : string,
+        PhotoImage? : string,
     }) =>
       {
 
@@ -233,6 +234,16 @@ useEffect(() => {
                       >
                         {/* Use an image that is just a gradient border */}
                         <Image
+                          src= {PhotoImage}
+                          style={{
+                            position: "absolute",
+                            top: 0,
+                            left: 0,
+                            width: "100%",
+                            height: "100%",
+                          }}
+                        />
+                        <Image
                           src={frameImage}
                           style={{
                             position: "absolute",
@@ -243,7 +254,6 @@ useEffect(() => {
                           }}
                         />
                         <View style={{ flex: 1, padding: 10, justifyContent: "center", alignItems: "center" }}>
-                          <Text>PHOTO</Text>
                         </View>
                       </View>
                     </View>

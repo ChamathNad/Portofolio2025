@@ -25,6 +25,7 @@ export default function DownloadButton({
         secondaryColor={isGame ? "#FDD9AE" : "#BED9FD"}
         GameCV={isGame}
         frameImage={isGame ? "/frame.png" : "/frame2.png"}
+        PhotoImage={isGame ? "/Photo.png" : "/Photo2.png"}
         />
     );
 
@@ -39,7 +40,7 @@ export default function DownloadButton({
                 font-family-Lufga
                 cursor-pointer group justify-center mx-auto
                 rounded-[60px] max-w-[450px]
-                text-[16px] md:text-[20px] font-normal text-white
+                text-[12px] sm:text-[16px] md:text-[20px] font-normal text-white
                 flex items-center flex-2  transition duration-200 
             `}
         >
