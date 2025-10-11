@@ -1,3 +1,4 @@
+'use client';
 import { Dispatch, SetStateAction, useEffect } from 'react';
 import Spinner from '../ui/spinner';
 import { FaDownload } from 'react-icons/fa';

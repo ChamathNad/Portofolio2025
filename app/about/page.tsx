@@ -13,8 +13,8 @@ export default function Home() {
           Logo: <EnvelopeIcon weight="fill" className='group-hover:text-Primary-500'  /> ,
         }, 
         {
-          links: 'tel:',
-          rawlinks: '',
+          links: 'tel:+94775269153',
+          rawlinks: '+94 77 526 9153',
           Id: 'Phone ',
           Logo: <PhoneCallIcon weight="fill" className='group-hover:text-Primary-500'  /> ,
         }, 
