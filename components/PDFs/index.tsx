@@ -1,4 +1,3 @@
-'use client'
 import dynamic from "next/dynamic";
 import Spinner from "../ui/spinner";
 
@@ -16,7 +15,7 @@ export const PDFViewer = dynamic(
 export const PDFDownloadLink = dynamic(
   () => import("@react-pdf/renderer").then((m) => m.PDFDownloadLink),  
   {
-    ssr: false,
+    ssr: true,
     loading: () => <div className="flex items-center justify-center h-[40px]"><Spinner attributes="border-white w-[30px] h-[30px] border-[5px] " /></div>,
   }
 );
