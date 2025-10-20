@@ -10,7 +10,7 @@ export default function Home() {
 
 
   return (
-    <div className="w-full p-1">
+    <div className="w-full p-1 bg-background">
       <Container className="relative bg-background w-full min-h-[80vh]  ">
         
           <hr className="custom-hr"/>

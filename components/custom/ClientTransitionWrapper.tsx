@@ -36,9 +36,9 @@ export default function ClientTransitionWrapper({
   }, []);
 
   return (
-    <div ref={ref} className="mainContainer">
+    <div ref={ref} className="mainContainer w-full  lg:max-w-[1600px] mx-auto">
       {isLoading ? (
-          <div className="flex m-auto items-center justify-center w-[50vw] h-[50vh] align-middle">
+          <div className="flex m-auto items-center bg-background justify-center h-screen align-middle">
             <div className="border-t-transparent rounded-full animate-spin border-Primary-500 w-[50%] max-w-[400px] aspect-square border-[1vw] lg:border-8 "></div>
           </div>
         ) : (children)}

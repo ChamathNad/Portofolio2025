@@ -143,7 +143,7 @@ export default function ProjectCard({
                 <SheetContent side='bottom'     
                     className='text-[12px] sm:text-[14px] lg:text-[15px]  overflow-y-auto max-h-screen
                             justify-center-safe bg-foreground dark:bg-background text-white rounded-2xl font-family-Lufga 
-                            fixed left-1/2 -translate-x-1/2 bottom-1/2 translate-y-1/2 w-[90%] max-w-[1250px]'>
+                            fixed left-1/2 -translate-x-1/2 bottom-1/2 translate-y-1/2 w-[90%] max-w-[1300px]'>
                     
                     <SheetHeader>
                     <SheetTitle></SheetTitle>
@@ -151,14 +151,16 @@ export default function ProjectCard({
                     </SheetHeader>
 
                     {/* Card Open*/}
-                    <div className="flex w-full mx-auto justify-center items-center text-center flex-col gap-3 mb-10">
-                    <span className="text-[200%] px-[15%]">{logoName}</span>
-                    <span className="text-Primary-400 px-[15%]">{place}</span>
+                    <div className="flex w-full mx-auto justify-center items-center text-center flex-col gap-2 mb-10">
+                    <span className="text-[150%] px-[15%]">{logoName}</span>
+                    <span className='flex flex-row mx-auto gap-5'>
+                        <span className="text-Primary-400 mx-auto">{place}</span> 
+                        <span className="text-Primary-200 mx-auto">Team Size : {size}</span>
+                    </span>
                     <span className="text-gray-400 px-[15%]">{date}</span>
-                    <span className="text-Primary-200 px-[15%]">Team Size : {size}</span>
                     <hr className="w-[80%] bg-Primary-500/50 border-Primary-500/50"/>
 
-                    <div className="w-[70%] max-w-[700px] max-h-[50%]">
+                    <div className="w-[80%]">
                         
 
                         <Tabs defaultValue="Images" className="relative w-full flex-col rounded-[8px] overflow-clip">
@@ -177,8 +179,8 @@ export default function ProjectCard({
                                     <Image
                                         src={`${baseUrl}${imageLink}`}
                                         alt=""
-                                        width={500}
-                                        height={500}
+                                        width={1500}
+                                        height={1500}
                                         className="max-h-full max-w-full object-contain aspect-[7/4] rounded-[8px]"
                                     />
                                     </CarouselItem>
@@ -187,8 +189,8 @@ export default function ProjectCard({
                                         <Image
                                         src={`${baseUrl}${exp}`}
                                         alt=""
-                                        width={500}
-                                        height={500}
+                                        width={1500}
+                                        height={1500}
                                         className="max-h-full max-w-full object-contain aspect-[7/4]"
                                         />
                                     </CarouselItem>

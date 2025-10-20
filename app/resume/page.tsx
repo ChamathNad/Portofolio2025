@@ -26,8 +26,8 @@ export default function Home() {
     }, []);
     
   return (
-      <div className="w-full p-1">
-        <Container className="flex-row justify-center bg-background w-full min-h-[80vh] lg:max-w-[1200px] overflow-x-clip text-[90%] sm:text-[100%] lg:text-[120%]">
+      <div className="w-full p-1  bg-background">
+        <Container className="flex-row justify-center bg-background w-full min-h-[80vh] overflow-x-clip text-[90%] sm:text-[100%] lg:text-[120%]">
           <hr className="custom-hr"/>
           <div className="flex gap-[3%] px-[3%]">
             <DownloadButton onClick={()=> handleClick(5)} isGame={true}> GameDev CV </DownloadButton>

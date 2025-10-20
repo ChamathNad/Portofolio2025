@@ -126,12 +126,12 @@ export default function Home() {
       const isActive = (tag:string) => activeTags.includes(tag);
 
   return (    
-        <div className="w-full p-1">
-          <Container className="flex flex-col w-full min-h-[80vh] lg:max-w-[1200px] ">            
+        <div className="w-full p-1  bg-background">
+          <Container className="flex flex-col w-full min-h-[80vh] bg-background ">            
             <hr className="custom-hr2"/>
             
             {/* TAGS */}
-            <div className='w-full flex-row mx-auto justify-center flex h-auto gap-2 text-[70%] md:text-[90%] lg:text-[100%]'>
+            <div className='w-full flex-row mx-auto justify-center flex h-auto gap-2 text-[70%] md:text-[90%] lg:text-[100%] px-[1%]'>
               
               <div className="flex flex-[70%] flex-wrap justify-start font-family-Lufga dark:text-white duration-200 px-2">
                 <FilterButton onClick={() => clearTags() }> All </FilterButton>

@@ -14,9 +14,9 @@ export default function Header(){
     const { activeIndex,  handleClick} = useNavigation();
     
     return (            
-        <div className=''>        
-            {/*PC Bar */}    
-            <div className=' pl-[70px] pr-[70px] max-w-[1340px] not-lg:hidden pt-[50px] '>
+        <div className='w-full lg:max-w-[1600px] mx-auto'>        
+            {/*PC Bar */}
+            <div className='mx-auto pl-[70px] pr-[70px] w-full not-lg:hidden pt-[50px] bg-background'>
                 <Container className='flex flex-row gap-[20px] bg-black dark:bg-gray-300 rounded-[50px] p-[10px]'> 
                         <HeaderButton onClick={() => handleClick(1)} isActive={activeIndex === 1}><HomeIcon className='mr-[10px]'/> Home</HeaderButton>
                         <HeaderButton onClick={() => handleClick(2)} isActive={activeIndex === 2}><ReadCvLogoIcon className='mr-[10px]'/>Resume</HeaderButton>

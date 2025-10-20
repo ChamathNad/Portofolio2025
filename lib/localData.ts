@@ -44,7 +44,7 @@ export function SchoolHystory() {
   return [    
     {
       place: 'University of Jayewardenepura, Colombo.',
-      title: 'BSc in Physics Science - ICT',
+      title: 'BSc in Physical Science - ICT',
       time: 'Jan 2016 - Dec 2019',
       description: ' ',
     },

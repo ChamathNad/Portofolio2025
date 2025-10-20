@@ -107,6 +107,7 @@
 /* #endregion */
 
   --font-family-Lufga: 'BaseFont';
+  --color-outerBG: #202b34;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
