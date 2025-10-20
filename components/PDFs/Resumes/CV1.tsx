@@ -212,7 +212,7 @@ useEffect(() => {
     setPage1Projects(cleaned.slice(0, 9)); // first page
     setPage2Projects(cleaned.slice(9)); // second page
   });
-}, []);
+}, [GameCV]);
 
         return(
             <Document>           
