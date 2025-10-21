@@ -373,6 +373,11 @@
   margin-bottom: 1%;
 }
 
+.boxObject {
+  z-index: 8;
+  filter: hue-rotate(160deg) saturate(2500%);
+}
+
 /* #region Queries */
 
 @media (max-width: 359px) {
