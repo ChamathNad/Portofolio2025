@@ -2,6 +2,7 @@
 import Container from "@/components/custom/Container";
 import HomeFooter from "@/components/HomePage/Footer";
 import { EnvelopeIcon, LinkedinLogoIcon, GithubLogoIcon, FacebookLogoIcon, PhoneCallIcon, XLogoIcon,InstagramLogoIcon } from "@phosphor-icons/react";
+import { FaItchIo } from "react-icons/fa";
 
 export default function Home() {
   const SocialData = 
@@ -49,6 +50,13 @@ export default function Home() {
           rawlinks: 'www.instagram.com/chamathnad/',
           Id: 'Instagram ',
           Logo: <InstagramLogoIcon weight="fill" className='group-hover:text-Primary-500' />,
+          footer: false,
+        }, 
+        {
+          links: 'https://chamathnad.itch.io/',
+          rawlinks: 'chamathnad.itch.io',
+          Id: 'Itch.IO ',
+          Logo: <FaItchIo  className='group-hover:text-Primary-500' />,
           footer: false,
         }, 
       ];
