@@ -16,7 +16,7 @@ export default function Home(){
   );
 
     return( 
-    <div className="min-h-screen min-w-screen mt-4">
+    <div className="min-h-screen w-full p-[1] mt-4">
         <PDFViewer className="w-full h-screen">{cvDoc}</PDFViewer>
     </div>
     );
