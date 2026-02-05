@@ -1,5 +1,11 @@
 export function WorkHystory() {
-  return [
+  return [    
+    {
+      place: '........',
+      title: 'Freelancer',
+      time: 'Sep 2026 - Current',
+      description: 'Freelancing on various projects',
+    },
     {
       place: 'Ninehermits Games, Colombo',
       title: 'Game Development Lead',
@@ -23,7 +29,7 @@ export function WorkHystory() {
       place: '........',
       title: 'Freelancer',
       time: 'May 2021 - May 2022',
-      description: 'Start Freelancing on various projects',
+      description: 'Freelancing on various projects',
     },
     {
       place: 'RIS - USJP',

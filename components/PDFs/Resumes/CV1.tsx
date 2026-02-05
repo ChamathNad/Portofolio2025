@@ -26,7 +26,7 @@ Font.register({
 // Create styles
 const styles = StyleSheet.create({
    page: {
-    flexDirection: "row",
+    flexDirection: "column",
     fontSize: 11,
     padding: 15,
     fontFamily : "RobotoRegular",
@@ -195,7 +195,7 @@ useEffect(() => {
         CVDesc:  "• Into the Johnnyverse    • Squid Game Cookie Cutting\n"+
                  "• No Drone Zone           • Pepe Grab\n"+
                  "• Cat Song                • WTF\n"+
-                 "• Mind Blown              • My Precious"  + "\nHypher-Casual minigame series based on varioud popular Memes",
+                 "• Mind Blown              • My Precious"  + "\nHypher-Casual minigame series based on varioud Memes",
         CVTags: 'Unity | Action | Puzzle | Game | Web | C#',
         portofolio: false,
         icon: "M19.1818 12.9174C19.1818 15.4694 17.3977 17.5455 15.2045 17.5455C13.6625 17.5455 12.267 16.5002 11.6142 14.9008H8.56705C7.91477 16.5002 6.51932 17.5455 4.97727 17.5455C2.78409 17.5455 1 15.4694 1 12.9174C1 12.5729 1.0358 12.2179 1.10682 11.8661L2.31591 5.74446C2.775 4.10281 4.07273 3 5.54545 3C6.51875 3 7.425 3.47802 8.0733 4.32231H12.1085C12.7568 3.47802 13.6631 3 14.6364 3C16.1091 3 17.4068 4.10281 17.8659 5.74446L19.0744 11.8635C19.146 12.2179 19.1818 12.5729 19.1818 12.9174ZM7.81818 8.95041C7.81818 8.58545 7.56364 8.28926 7.25 8.28926H6.68182V7.6281C6.68182 7.26314 6.42727 6.96694 6.11364 6.96694H4.97727C4.66364 6.96694 4.40909 7.26314 4.40909 7.6281V8.28926H3.84091C3.52727 8.28926 3.27273 8.58545 3.27273 8.95041V10.2727C3.27273 10.6377 3.52727 10.9339 3.84091 10.9339H4.40909V11.595C4.40909 11.96 4.66364 12.2562 4.97727 12.2562H6.11364C6.42727 12.2562 6.68182 11.96 6.68182 11.595V10.9339H7.25C7.56364 10.9339 7.81818 10.6377 7.81818 10.2727V8.95041ZM13.5 11.595C13.5 10.8645 12.9915 10.2727 12.3636 10.2727C11.7358 10.2727 11.2273 10.8645 11.2273 11.595C11.2273 12.3256 11.7358 12.9174 12.3636 12.9174C12.9915 12.9174 13.5 12.3256 13.5 11.595ZM13.5 8.28926C13.5 7.55868 12.9915 6.96694 12.3636 6.96694C11.7358 6.96694 11.2273 7.55868 11.2273 8.28926C11.2273 9.01983 11.7358 9.61157 12.3636 9.61157C12.9915 9.61157 13.5 9.01983 13.5 8.28926ZM16.3409 10.9339C16.3409 10.2033 15.8324 9.61157 15.2045 9.61157C14.5767 9.61157 14.0682 10.2033 14.0682 10.9339C14.0682 11.6645 14.5767 12.2562 15.2045 12.2562C15.8324 12.2562 16.3409 11.6645 16.3409 10.9339ZM16.3409 7.6281C16.3409 6.89752 15.8324 6.30579 15.2045 6.30579C14.5767 6.30579 14.0682 6.89752 14.0682 7.6281C14.0682 8.35868 14.5767 8.95041 15.2045 8.95041C15.8324 8.95041 16.3409 8.35868 16.3409 7.6281Z",
@@ -209,8 +209,8 @@ useEffect(() => {
     cleaned = cleaned.filter(p => (p.gameCV && GameCV) || (p.webCV && !GameCV));
     
     //setProjects(cleaned);
-    setPage1Projects(cleaned.slice(0, 9)); // first page
-    setPage2Projects(cleaned.slice(9)); // second page
+    setPage1Projects(cleaned.slice(0, 10)); // first page
+    setPage2Projects(cleaned.slice(10)); // second page
   });
 }, [GameCV]);
 
@@ -323,7 +323,7 @@ useEffect(() => {
                       <Text style={{paddingTop: 15}} >Date of Birth:<Text style={{color:secondaryColor}}>  05 Jul 1996</Text></Text>  
                     </View>
                     <View style={[styles.section2, { height: "85%",color:"#EEEEEE",  justifyContent:"flex-start", marginBottom: 20 }]}>
-                      <Text style={{fontFamily: "RobotoCondensed", fontSize: 14, color: primaryColor, paddingBottom: 10}}>EXPERIENCE AND PROJECTS</Text>
+                      <Text style={{fontFamily: "RobotoCondensed", fontSize: 14, color: primaryColor, paddingBottom: 5}}>EXPERIENCE AND PROJECTS</Text>
                        {page1Projects.map((exp, index) => (
                           <View key={index} style={styles.col}>
                             <View key={index} style={styles.row}>
@@ -362,8 +362,8 @@ useEffect(() => {
                 <View style={styles.section}>
                   {/* LEFT SIDEBAR */}
                   <View style={styles.sidebar }>
-                    <View style={[styles.section2, { height: "32%",color:"#EEEEEE",  justifyContent:"flex-start" }]}>
-                      <Text style={{fontFamily: "RobotoCondensed", fontSize: 14, color: primaryColor, paddingBottom: 10}}>EDUCATION HYSTORY</Text>  
+                    <View style={[styles.section2, { height: "31%",color:"#EEEEEE",  justifyContent:"flex-start" }]}>
+                      <Text style={{fontFamily: "RobotoCondensed", fontSize: 14, color: primaryColor, paddingBottom: 8}}>EDUCATION HYSTORY</Text>  
                         {schoolData.map((exp, index) => (
                             <View key={index} style={{...styles.col, paddingBottom: 4}}>
                               <View style={{flexDirection:'row'}}>
@@ -383,8 +383,8 @@ useEffect(() => {
                           ))}                    
                     </View>
 
-                    <View style={[styles.section2, { height: "43%",color:"#EEEEEE",  justifyContent:"flex-start" }]}>
-                      <Text style={{fontFamily: "RobotoCondensed", fontSize: 14, color: primaryColor, paddingBottom: 10}}>WORK HYSTORY</Text>
+                    <View style={[styles.section2, { height: "50%",color:"#EEEEEE",  justifyContent:"flex-start" }]}>
+                      <Text style={{fontFamily: "RobotoCondensed", fontSize: 14, color: primaryColor, paddingBottom: 8}}>WORK HYSTORY</Text>
                           {workData.map((exp, index) => (
                             <View key={index} style={{...styles.col, paddingBottom: 4}}>
                               <View style={{flexDirection:'row'}}>
@@ -403,57 +403,7 @@ useEffect(() => {
                             </View>
                           ))}      
                     </View>
-                    {/* REFERENCE */}
-                    <View style={[styles.section2, { height: "25%",color:"#EEEEEE",  justifyContent:"space-around" }]}>
-                      <Text style={{fontFamily: "RobotoCondensed", fontSize: 14, color: primaryColor, paddingBottom: 10}}>REFERENCE</Text>
-
-                      <Text style={{paddingBottom: 3, }}>Sharmila Roshandeen </Text>
-                      <Text style={{fontSize: 10,  }}>HR Manager</Text>
-                      <View style={{fontSize: 9,  flexDirection: 'row'}}> 
-                        <Svg width="10" height="10" viewBox="0 0 50 50" >
-                          <Path
-                            d= "M41.666 8.33337H8.33268C6.04102 8.33337 4.18685 10.2084 4.18685 12.5L4.16602 37.5C4.16602 39.7917 6.04102 41.6667 8.33268 41.6667H41.666C43.9577 41.6667 45.8327 39.7917 45.8327 37.5V12.5C45.8327 10.2084 43.9577 8.33337 41.666 8.33337ZM41.666 16.6667L24.9993 27.0834L8.33268 16.6667V12.5L24.9993 22.9167L41.666 12.5V16.6667Z"
-                            fill = {primaryColor}
-                          />
-                        </Svg>                   
-                        <Text style={{color: primaryColor}}> Email : </Text>
-                        <Text style={{color: secondaryColor}}> Sharmideen92@gmail.com </Text>
-                      </View>
-                      <View style={{fontSize: 9, paddingBottom: 7, flexDirection: 'row'}}> 
-                        <Svg width="9" height="9" viewBox="0 0 24 24" >
-                          <Path
-                            d= "M20.19,13a10,10,0,0,1-3.43-.91,2,2,0,0,0-2.56.83l-.51.85a12.69,12.69,0,0,1-3.44-3.45l.86-.49a2,2,0,0,0,.83-2.56A10,10,0,0,1,11,3.81,2,2,0,0,0,9,2H5.13A3,3,0,0,0,2.86,3a3.13,3.13,0,0,0-.71,2.43A19,19,0,0,0,18.58,21.85a3,3,0,0,0,.42,0,3,3,0,0,0,2-.73,3,3,0,0,0,1-2.26V15A2,2,0,0,0,20.19,13Z"
-                            fill = {primaryColor}
-                          />
-                        </Svg> 
-                        <Text style={{color: primaryColor}}> Phone : </Text>
-                        <Text style={{color: secondaryColor}}> +94 76 971 0702 </Text>
-                      </View>
-
-                      
-                      <Text style={{paddingBottom: 3, }}>Lahiru Supun </Text>
-                      <Text style={{fontSize: 10, }}>Full Stack Developer </Text>
-                      <View style={{fontSize: 9,  flexDirection: 'row'}}> 
-                        <Svg width="10" height="10" viewBox="0 0 50 50" >
-                          <Path
-                            d= "M41.666 8.33337H8.33268C6.04102 8.33337 4.18685 10.2084 4.18685 12.5L4.16602 37.5C4.16602 39.7917 6.04102 41.6667 8.33268 41.6667H41.666C43.9577 41.6667 45.8327 39.7917 45.8327 37.5V12.5C45.8327 10.2084 43.9577 8.33337 41.666 8.33337ZM41.666 16.6667L24.9993 27.0834L8.33268 16.6667V12.5L24.9993 22.9167L41.666 12.5V16.6667Z"
-                            fill = {primaryColor}
-                          />
-                        </Svg>                   
-                        <Text style={{color: primaryColor}}> Email : </Text>
-                        <Text style={{color: secondaryColor}}> lhrsupun@gmail.com </Text>  
-                      </View>
-                      <View style={{fontSize: 9, paddingBottom: 7, flexDirection: 'row'}}> 
-                        <Svg width="9" height="9" viewBox="0 0 24 24" >
-                          <Path
-                            d= "M20.19,13a10,10,0,0,1-3.43-.91,2,2,0,0,0-2.56.83l-.51.85a12.69,12.69,0,0,1-3.44-3.45l.86-.49a2,2,0,0,0,.83-2.56A10,10,0,0,1,11,3.81,2,2,0,0,0,9,2H5.13A3,3,0,0,0,2.86,3a3.13,3.13,0,0,0-.71,2.43A19,19,0,0,0,18.58,21.85a3,3,0,0,0,.42,0,3,3,0,0,0,2-.73,3,3,0,0,0,1-2.26V15A2,2,0,0,0,20.19,13Z"
-                            fill = {primaryColor}
-                          />
-                        </Svg> 
-                        <Text style={{color: primaryColor}}> Phone : </Text>
-                        <Text style={{color: secondaryColor}}> +94 71 348 6065 </Text>
-                      </View>
-                    </View>
+                    
                   </View>
 
                   {/* RIGHT CONTENT */}
@@ -511,10 +461,25 @@ useEffect(() => {
                           </View>
                         </View>
                         ))}
-                    </View>
+                    </View>                 
 
-                  {/* INTERESTS */}
-                    <View style={[styles.section2, { height: "22%",color:"#EEEEEE",  justifyContent:"flex-start"}]}>
+                  </View>
+
+
+                    {/* INTERESTS */}
+                <View
+                  style={{
+                    position: "absolute",
+                    bottom: 50,
+                    left: 0,
+                    right: 0,
+                    paddingHorizontal: 20,
+                    borderColor: secondaryColor,
+                    borderWidth: 1,
+                    borderRadius: 5,
+                  }}
+                >
+                  <View style={[styles.section2, { height: "100%",color:"#EEEEEE",  justifyContent:"flex-start"}]}>
                       <Text style={{fontFamily: "RobotoCondensed", fontSize: 14, color: primaryColor, paddingBottom: 7}}>INTERESTS </Text>
                        <View style={{ flexDirection: 'row', flexWrap:'wrap', gap: 5, width: "100%"}}> 
                         {pageInterests.map((exp, index) => (
@@ -531,8 +496,35 @@ useEffect(() => {
 
                       </View>
                     </View>
-
                   </View>
+
+                </View>
+                {/* FOOTER */}
+                <View
+                  style={{
+                    position: "absolute",
+                    bottom: 20,
+                    left: 0,
+                    right: 0,
+                    paddingHorizontal: 20,
+                  }}
+                >
+                  {/* Horizontal line */}
+                  <View
+                    style={{
+                      borderTopWidth: 1,
+                      borderTopColor: primaryColor,
+                      marginBottom: 3,
+                    }}
+                  />
+
+                  {/* Footer content */}
+                  <Text style={{ textAlign: "center", fontSize: 8, color: secondaryColor }}>
+                    © 2026 Chamath Nadeeshan. All rights reserved.  
+                  </Text>
+                  <Text style={{ textAlign: "center", fontSize: 8, color: secondaryColor }}>
+                    I consent to the processing of my personal data for recruitment and future opportunities
+                  </Text>
                 </View>
               </Page>
             </Document>
